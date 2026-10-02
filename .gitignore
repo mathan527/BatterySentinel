@@ -1,0 +1,56 @@
+# BatterySentinel — .gitignore
+# ================================
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+.venv/
+venv/
+env/
+
+# Data (raw data is large — download separately from Kaggle)
+data/raw/
+data/raw/*.mat
+data/raw/*.csv
+data/raw/*.xlsx
+
+# Generated outputs (keep processed data in repo if small)
+# data/processed/
+# data/interim/
+
+# Trained models
+models/*.joblib
+models/*.pkl
+models/*.pt
+
+# Reports / figures
+reports/figures/*.png
+reports/figures/*.pdf
+reports/figures/*.svg
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Streamlit
+.streamlit/secrets.toml

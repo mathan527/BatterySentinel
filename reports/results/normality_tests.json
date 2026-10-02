@@ -1,0 +1,42 @@
+{
+  "soh": {
+    "mu": 74.96897,
+    "sigma": 24.376722,
+    "shapiro_stat": 0.762765,
+    "shapiro_p": 0.0,
+    "is_approximately_normal": false,
+    "note": "Shapiro-Wilk p > 0.05: insufficient evidence to reject normality. p <= 0.05: evidence against normality."
+  },
+  "capacity": {
+    "mu": 1.326543,
+    "sigma": 0.472517,
+    "shapiro_stat": 0.858202,
+    "shapiro_p": 0.0,
+    "is_approximately_normal": false,
+    "note": "Shapiro-Wilk p > 0.05: insufficient evidence to reject normality. p <= 0.05: evidence against normality."
+  },
+  "voltage_mean": {
+    "mu": 3.404579,
+    "sigma": 0.348275,
+    "shapiro_stat": 0.487689,
+    "shapiro_p": 0.0,
+    "is_approximately_normal": false,
+    "note": "Shapiro-Wilk p > 0.05: insufficient evidence to reject normality. p <= 0.05: evidence against normality."
+  },
+  "temperature_mean": {
+    "mu": 26.77176,
+    "sigma": 13.960643,
+    "shapiro_stat": 0.895376,
+    "shapiro_p": 0.0,
+    "is_approximately_normal": false,
+    "note": "Shapiro-Wilk p > 0.05: insufficient evidence to reject normality. p <= 0.05: evidence against normality."
+  },
+  "Re_Ohm": {
+    "mu": 0.082624,
+    "sigma": 0.024462,
+    "shapiro_stat": 0.980093,
+    "shapiro_p": 0.0,
+    "is_approximately_normal": false,
+    "note": "Shapiro-Wilk p > 0.05: insufficient evidence to reject normality. p <= 0.05: evidence against normality."
+  }
+}

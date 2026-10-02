@@ -1,0 +1,113 @@
+# ============================================================
+# BATTERYSENTINEL — Configuration
+# ============================================================
+
+project:
+  name: BatterySentinel
+  version: "1.0.0"
+  description: >
+    Probabilistic Early-Failure Prediction for Lithium-Ion Batteries.
+    Educational / research project for Machine Learning Unit 1.
+
+# ============================================================
+# DATA PATHS
+# ============================================================
+data:
+  raw_dir: data/raw
+  interim_dir: data/interim
+  processed_dir: data/processed
+  dataset_report_json: data/processed/dataset_report.json
+  dataset_report_txt: data/processed/dataset_report.txt
+  cycle_data_csv: data/processed/cycle_data.csv
+
+# ============================================================
+# STATE OF HEALTH
+# ============================================================
+soh:
+  # EOL threshold is a CONFIGURABLE RESEARCH PARAMETER.
+  # It is NOT a universal safety certification threshold.
+  # Default: 0.70 (70%)
+  eol_threshold: 0.70
+
+  # Labels used in the UI and reports
+  eol_label: "Configurable research EOL threshold (default 70% SOH)"
+
+# ============================================================
+# DEGRADATION LABELS
+# ============================================================
+labels:
+  healthy_max_soh: 1.00
+  early_degradation_soh: 0.85  # SOH below this → early degradation zone
+  eol_soh: 0.70                # SOH below this → end-of-life zone
+
+  # Human-readable class names
+  class_healthy: "Healthy"
+  class_early_degradation: "Early Degradation"
+  class_degraded: "Degraded (Near EOL)"
+
+# ============================================================
+# STATISTICAL ANOMALY DETECTION
+# ============================================================
+anomaly:
+  iqr_multiplier: 1.5   # Tukey fence multiplier
+
+# ============================================================
+# POLYNOMIAL FITTING
+# ============================================================
+polynomial:
+  degrees_to_try: [1, 2, 3]
+  validation_fraction: 0.20
+
+# ============================================================
+# CLUSTERING
+# ============================================================
+clustering:
+  n_clusters: 3
+  k: 3
+  random_state: 42
+
+# ============================================================
+# BAYESIAN RISK ENGINE
+# ============================================================
+bayesian:
+  # Laplace smoothing for discrete estimates
+  laplace_smoothing: 1.0
+  # Features used as evidence — must match column names in cycle_data.csv
+  evidence_features:
+    - capacity
+    - soh
+    - voltage_mean
+    - voltage_std
+    - temperature_mean
+    - temperature_std
+    - Re_Ohm
+    - current_mean
+    - current_std
+
+# ============================================================
+# MODEL TRAINING
+# ============================================================
+training:
+  # Battery-level split (NOT cycle-level random split)
+  # to prevent data leakage
+  test_fraction: 0.20
+  val_fraction: 0.10
+  random_state: 42
+  # Explicit test battery list (null = auto-select by test_fraction)
+  # These batteries are held out entirely from training
+  test_batteries:
+    - B0006
+    - B0042
+    - B0045
+    - B0046
+    - B0033
+    - B0040
+    - B0049
+
+# ============================================================
+# REPORTING
+# ============================================================
+reporting:
+  figures_dir: reports/figures
+  results_dir: reports/results
+

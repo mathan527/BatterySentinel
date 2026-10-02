@@ -1,0 +1,140 @@
+{
+  "n_training": 2101,
+  "class_counts": {
+    "Healthy": 874,
+    "Early Degradation": 836,
+    "Degraded": 366
+  },
+  "class_priors": {
+    "Healthy": 0.4158745247148289,
+    "Early Degradation": 0.39781368821292773,
+    "Degraded": 0.1744296577946768
+  },
+  "evidence_features": [
+    "capacity",
+    "soh",
+    "voltage_mean",
+    "voltage_std",
+    "temperature_mean",
+    "temperature_std",
+    "Re_Ohm",
+    "current_mean",
+    "current_std"
+  ],
+  "class_params": {
+    "Healthy": {
+      "capacity": {
+        "mu": 1.59596697,
+        "sigma": 0.26459637
+      },
+      "soh": {
+        "mu": 93.50588156,
+        "sigma": 4.70683043
+      },
+      "voltage_mean": {
+        "mu": 3.43589155,
+        "sigma": 0.14038355
+      },
+      "voltage_std": {
+        "mu": 0.26943589,
+        "sigma": 0.05580224
+      },
+      "temperature_mean": {
+        "mu": 31.96242103,
+        "sigma": 14.81336307
+      },
+      "temperature_std": {
+        "mu": 3.33731065,
+        "sigma": 1.28984887
+      },
+      "Re_Ohm": {
+        "mu": 0.0750372,
+        "sigma": 0.02810976
+      },
+      "current_mean": {
+        "mu": -2.03350737,
+        "sigma": 0.94911556
+      },
+      "current_std": {
+        "mu": 0.62887282,
+        "sigma": 0.4695184
+      }
+    },
+    "Early Degradation": {
+      "capacity": {
+        "mu": 1.33185346,
+        "sigma": 0.23452801
+      },
+      "soh": {
+        "mu": 76.99525835,
+        "sigma": 4.19891261
+      },
+      "voltage_mean": {
+        "mu": 3.40098054,
+        "sigma": 0.10461553
+      },
+      "voltage_std": {
+        "mu": 0.30560776,
+        "sigma": 0.07301517
+      },
+      "temperature_mean": {
+        "mu": 24.98186629,
+        "sigma": 12.30167097
+      },
+      "temperature_std": {
+        "mu": 4.30887942,
+        "sigma": 2.53557312
+      },
+      "Re_Ohm": {
+        "mu": 0.0892064,
+        "sigma": 0.02524465
+      },
+      "current_mean": {
+        "mu": -1.64703775,
+        "sigma": 0.36185218
+      },
+      "current_std": {
+        "mu": 0.80245671,
+        "sigma": 0.65584914
+      }
+    },
+    "Degraded": {
+      "capacity": {
+        "mu": 0.80219116,
+        "sigma": 0.69781482
+      },
+      "soh": {
+        "mu": 36.51058594,
+        "sigma": 29.93953705
+      },
+      "voltage_mean": {
+        "mu": 3.61425132,
+        "sigma": 0.30900192
+      },
+      "voltage_std": {
+        "mu": 0.31731974,
+        "sigma": 0.13149663
+      },
+      "temperature_mean": {
+        "mu": 18.39205293,
+        "sigma": 12.28505144
+      },
+      "temperature_std": {
+        "mu": 2.51630084,
+        "sigma": 1.63480287
+      },
+      "Re_Ohm": {
+        "mu": 0.08742481,
+        "sigma": 0.02107529
+      },
+      "current_mean": {
+        "mu": -1.29594502,
+        "sigma": 0.82210605
+      },
+      "current_std": {
+        "mu": 0.77263499,
+        "sigma": 0.59921087
+      }
+    }
+  }
+}

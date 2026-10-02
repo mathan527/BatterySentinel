@@ -1,0 +1,128 @@
+{
+  "k_optimal": 3,
+  "elbow_analysis": {
+    "2": {
+      "inertia": 23993.7369,
+      "silhouette": 0.2611
+    },
+    "3": {
+      "inertia": 19177.9728,
+      "silhouette": 0.3249
+    },
+    "4": {
+      "inertia": 15446.5061,
+      "silhouette": 0.3099
+    },
+    "5": {
+      "inertia": 13395.3904,
+      "silhouette": 0.3547
+    },
+    "6": {
+      "inertia": 11794.8816,
+      "silhouette": 0.3547
+    },
+    "7": {
+      "inertia": 10286.833,
+      "silhouette": 0.4076
+    },
+    "8": {
+      "inertia": 8773.8098,
+      "silhouette": 0.4238
+    },
+    "9": {
+      "inertia": 7832.3655,
+      "silhouette": 0.3899
+    }
+  },
+  "cluster_names": {
+    "0": "Healthy-like",
+    "1": "Degrading",
+    "2": "Degraded-like"
+  },
+  "cluster_summary": [
+    {
+      "cluster_id": 0,
+      "n_members": 1970,
+      "voltage_mean_mean": 3.43339,
+      "voltage_mean_std": 0.10231,
+      "voltage_std_mean": 0.27385,
+      "voltage_std_std": 0.05698,
+      "current_mean_mean": -1.73856,
+      "current_mean_std": 0.76322,
+      "current_std_mean": 0.50421,
+      "current_std_std": 0.36408,
+      "temperature_mean_mean": 26.59067,
+      "temperature_mean_std": 14.01776,
+      "temperature_std_mean": 3.04911,
+      "temperature_std_std": 1.13695,
+      "capacity_mean": 1.45974,
+      "capacity_std": 0.3038,
+      "soh_mean": 82.37515,
+      "soh_std": 12.88244,
+      "Re_Ohm_mean": 0.07702,
+      "Re_Ohm_std": 0.02252,
+      "discharge_duration_mean": 3557.13909,
+      "discharge_duration_std": 1374.29088,
+      "cycle_norm_mean": 0.52052,
+      "cycle_norm_std": 0.28646,
+      "dominant_label": "Healthy",
+      "label_purity": 0.468
+    },
+    {
+      "cluster_id": 1,
+      "n_members": 551,
+      "voltage_mean_mean": 3.27893,
+      "voltage_mean_std": 0.2208,
+      "voltage_std_mean": 0.38566,
+      "voltage_std_std": 0.04896,
+      "current_mean_mean": -2.00039,
+      "current_mean_std": 0.60248,
+      "current_std_mean": 1.6466,
+      "current_std_std": 0.62529,
+      "temperature_mean_mean": 33.73979,
+      "temperature_mean_std": 9.70731,
+      "temperature_std_mean": 7.57315,
+      "temperature_std_std": 1.58841,
+      "capacity_mean": 1.20165,
+      "capacity_std": 0.41271,
+      "soh_mean": 69.01188,
+      "soh_std": 21.99916,
+      "Re_Ohm_mean": 0.10471,
+      "Re_Ohm_std": 0.02012,
+      "discharge_duration_mean": 2709.12652,
+      "discharge_duration_std": 693.13945,
+      "cycle_norm_mean": 0.50224,
+      "cycle_norm_std": 0.28575,
+      "dominant_label": "Early Degradation",
+      "label_purity": 0.6878
+    },
+    {
+      "cluster_id": 2,
+      "n_members": 172,
+      "voltage_mean_mean": 3.87071,
+      "voltage_mean_std": 0.27792,
+      "voltage_std_mean": 0.37117,
+      "voltage_std_std": 0.17348,
+      "current_mean_mean": -0.70519,
+      "current_mean_std": 0.78998,
+      "current_std_mean": 1.08147,
+      "current_std_std": 0.46722,
+      "temperature_mean_mean": 8.73171,
+      "temperature_mean_std": 6.11521,
+      "temperature_std_mean": 1.34652,
+      "temperature_std_std": 0.72888,
+      "capacity_mean": 0.06864,
+      "capacity_std": 0.06952,
+      "soh_mean": 4.06494,
+      "soh_std": 3.25517,
+      "Re_Ohm_mean": 0.07662,
+      "Re_Ohm_std": 0.01907,
+      "discharge_duration_mean": 1066.18051,
+      "discharge_duration_std": 786.52722,
+      "cycle_norm_mean": 0.53331,
+      "cycle_norm_std": 0.21203,
+      "dominant_label": "Degraded",
+      "label_purity": 1.0
+    }
+  ]
+}

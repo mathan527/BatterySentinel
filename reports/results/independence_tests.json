@@ -1,0 +1,68 @@
+{
+  "cycle_number_vs_capacity": {
+    "n": 2769,
+    "pearson_r": -0.037797,
+    "pearson_p": 0.046732,
+    "pearson_significant": true,
+    "spearman_r": -0.207939,
+    "spearman_p": 0.0,
+    "spearman_significant": true,
+    "alpha": 0.05,
+    "interpretation": "Evidence of DEPENDENCE (Pearson p=0.0467, Spearman p=0.0000). Note: correlation implies linear/monotonic dependence, not causation."
+  },
+  "cycle_number_vs_soh": {
+    "n": 2769,
+    "pearson_r": -0.173238,
+    "pearson_p": 0.0,
+    "pearson_significant": true,
+    "spearman_r": -0.469385,
+    "spearman_p": 0.0,
+    "spearman_significant": true,
+    "alpha": 0.05,
+    "interpretation": "Evidence of DEPENDENCE (Pearson p=0.0000, Spearman p=0.0000). Note: correlation implies linear/monotonic dependence, not causation."
+  },
+  "temperature_mean_vs_capacity": {
+    "n": 2769,
+    "pearson_r": 0.609803,
+    "pearson_p": 0.0,
+    "pearson_significant": true,
+    "spearman_r": 0.549747,
+    "spearman_p": 0.0,
+    "spearman_significant": true,
+    "alpha": 0.05,
+    "interpretation": "Evidence of DEPENDENCE (Pearson p=0.0000, Spearman p=0.0000). Note: correlation implies linear/monotonic dependence, not causation."
+  },
+  "Re_Ohm_vs_soh": {
+    "n": 2693,
+    "pearson_r": -0.030354,
+    "pearson_p": 0.115301,
+    "pearson_significant": false,
+    "spearman_r": -0.15759,
+    "spearman_p": 0.0,
+    "spearman_significant": true,
+    "alpha": 0.05,
+    "interpretation": "Evidence of DEPENDENCE (Pearson p=0.1153, Spearman p=0.0000). Note: correlation implies linear/monotonic dependence, not causation."
+  },
+  "voltage_std_vs_soh": {
+    "n": 2769,
+    "pearson_r": -0.35853,
+    "pearson_p": 0.0,
+    "pearson_significant": true,
+    "spearman_r": -0.295691,
+    "spearman_p": 0.0,
+    "spearman_significant": true,
+    "alpha": 0.05,
+    "interpretation": "Evidence of DEPENDENCE (Pearson p=0.0000, Spearman p=0.0000). Note: correlation implies linear/monotonic dependence, not causation."
+  },
+  "cycle_number_vs_Re_Ohm": {
+    "n": 2718,
+    "pearson_r": 0.169183,
+    "pearson_p": 0.0,
+    "pearson_significant": true,
+    "spearman_r": 0.134642,
+    "spearman_p": 0.0,
+    "spearman_significant": true,
+    "alpha": 0.05,
+    "interpretation": "Evidence of DEPENDENCE (Pearson p=0.0000, Spearman p=0.0000). Note: correlation implies linear/monotonic dependence, not causation."
+  }
+}

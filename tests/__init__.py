@@ -1,0 +1,1 @@
+"""BatterySentinel – Test suite placeholder."""

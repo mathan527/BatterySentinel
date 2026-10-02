@@ -1,0 +1,572 @@
+
+================================================================
+  BATTERYSENTINEL — Phase 1: Dataset Inspection Report
+================================================================
+  Generated: 2026-09-27T16:56:35.146454
+  Data directory: C:\Users\Mathan\OneDrive\Desktop\Machine learning unit 1\BatterySentinel\data\raw\cleaned_dataset
+  Dataset variant: Cleaned CSV version (patrickfleith/nasa-battery-dataset on Kaggle)
+
+----------------------------------------------------------------
+  DATASET STRUCTURE
+----------------------------------------------------------------
+  Total cycle files (CSVs): 7565
+  README files: 0
+  metadata.csv rows: 7565
+  metadata.csv columns: ['type', 'start_time', 'ambient_temperature', 'battery_id', 'test_id', 'uid', 'filename', 'Capacity', 'Re', 'Rct']
+
+----------------------------------------------------------------
+  FLEET SUMMARY
+----------------------------------------------------------------
+  Number of batteries: 34
+  Battery IDs: B0005, B0006, B0007, B0018, B0025, B0026, B0027, B0028, B0029, B0030, B0031, B0032, B0033, B0034, B0036, B0038, B0039, B0040, B0041, B0042, B0043, B0044, B0045, B0046, B0047, B0048, B0049, B0050, B0051, B0052, B0053, B0054, B0055, B0056
+  Total cycle records: 7565
+  Charge records: 2815
+  Discharge records: 2794
+  Impedance records: 1956
+  Batteries with impedance data: B0005, B0006, B0007, B0018, B0025, B0026, B0027, B0028, B0029, B0030, B0031, B0032, B0033, B0034, B0036, B0038, B0039, B0040, B0041, B0042, B0043, B0044, B0045, B0046, B0047, B0048, B0049, B0050, B0051, B0052, B0053, B0054, B0055, B0056
+  Batteries reaching EOL (SOH ≤ 70%): B0005, B0006, B0040, B0042, B0043, B0044, B0045, B0046, B0047, B0048, B0049, B0050, B0051, B0053, B0054
+
+----------------------------------------------------------------
+  PER-CYCLE CSV STRUCTURE
+----------------------------------------------------------------
+
+  ── DISCHARGE cycles (example: 00001.csv) ──
+    Columns: ['Voltage_measured', 'Current_measured', 'Temperature_measured', 'Current_load', 'Voltage_load', 'Time']
+    Shape: [490, 6]
+    Voltage_measured              : min=2.4706  mean=3.4753  max=4.2468
+    Current_measured              : min=-1.0011  mean=-0.9528  max=0.0003
+    Temperature_measured          : min=5.0081  mean=8.2724  max=12.3768
+    Current_load                  : min=0.0002  mean=0.9572  max=1.0000
+    Voltage_load                  : min=0.0000  mean=2.8179  max=4.2620
+    Time                          : min=0.0000  mean=3205.1341  max=6436.1410
+
+  ── CHARGE cycles (example: 00003.csv) ──
+    Columns: ['Voltage_measured', 'Current_measured', 'Temperature_measured', 'Current_charge', 'Voltage_charge', 'Time']
+    Shape: [1621, 6]
+    Voltage_measured              : min=3.4862  mean=4.1935  max=4.2146
+    Current_measured              : min=0.0014  mean=0.5208  max=1.4943
+    Temperature_measured          : min=4.3582  mean=6.2792  max=8.7936
+    Current_charge                : min=-0.0006  mean=0.5236  max=1.4995
+    Voltage_charge                : min=0.0020  mean=4.5083  max=5.0110
+    Time                          : min=0.0000  mean=5363.6345  max=10803.3130
+
+  ── IMPEDANCE cycles (example: 00002.csv) ──
+    Columns: ['Sense_current', 'Battery_current', 'Current_ratio', 'Battery_impedance', 'Rectified_Impedance']
+    Shape: [48, 5]
+
+----------------------------------------------------------------
+  PER-BATTERY SUMMARIES
+----------------------------------------------------------------
+
+  ── Battery B0005 ──
+    Total records: 616
+    Charge / Discharge / Impedance: 170 / 168 / 278
+    Ambient temperatures (°C): [24]
+    Initial capacity (Ah): 1.85649
+    Final capacity (Ah): 1.32508
+    SOH final (%): 71.38
+    SOH decline (%): 28.62
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0006 ──
+    Total records: 616
+    Charge / Discharge / Impedance: 170 / 168 / 278
+    Ambient temperatures (°C): [24]
+    Initial capacity (Ah): 2.03534
+    Final capacity (Ah): 1.18568
+    SOH final (%): 58.25
+    SOH decline (%): 41.75
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0007 ──
+    Total records: 616
+    Charge / Discharge / Impedance: 170 / 168 / 278
+    Ambient temperatures (°C): [24]
+    Initial capacity (Ah): 1.89105
+    Final capacity (Ah): 1.43246
+    SOH final (%): 75.75
+    SOH decline (%): 24.25
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0018 ──
+    Total records: 319
+    Charge / Discharge / Impedance: 134 / 132 / 53
+    Ambient temperatures (°C): [24]
+    Initial capacity (Ah): 1.855
+    Final capacity (Ah): 1.34105
+    SOH final (%): 72.29
+    SOH decline (%): 27.71
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0025 ──
+    Total records: 80
+    Charge / Discharge / Impedance: 31 / 28 / 21
+    Ambient temperatures (°C): [24]
+    Initial capacity (Ah): 1.84701
+    Final capacity (Ah): 1.76779
+    SOH final (%): 95.71
+    SOH decline (%): 4.29
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0026 ──
+    Total records: 80
+    Charge / Discharge / Impedance: 31 / 28 / 21
+    Ambient temperatures (°C): [24]
+    Initial capacity (Ah): 1.81325
+    Final capacity (Ah): 1.76875
+    SOH final (%): 97.55
+    SOH decline (%): 2.45
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0027 ──
+    Total records: 80
+    Charge / Discharge / Impedance: 31 / 28 / 21
+    Ambient temperatures (°C): [24]
+    Initial capacity (Ah): 1.82331
+    Final capacity (Ah): 1.77009
+    SOH final (%): 97.08
+    SOH decline (%): 2.92
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0028 ──
+    Total records: 80
+    Charge / Discharge / Impedance: 31 / 28 / 21
+    Ambient temperatures (°C): [24]
+    Initial capacity (Ah): 1.80468
+    Final capacity (Ah): 1.71723
+    SOH final (%): 95.15
+    SOH decline (%): 4.85
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0029 ──
+    Total records: 97
+    Charge / Discharge / Impedance: 40 / 40 / 17
+    Ambient temperatures (°C): [43]
+    Initial capacity (Ah): 1.69751
+    Final capacity (Ah): 1.61208
+    SOH final (%): 94.97
+    SOH decline (%): 5.03
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0030 ──
+    Total records: 97
+    Charge / Discharge / Impedance: 40 / 40 / 17
+    Ambient temperatures (°C): [43]
+    Initial capacity (Ah): 1.65607
+    Final capacity (Ah): 1.56278
+    SOH final (%): 94.37
+    SOH decline (%): 5.63
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0031 ──
+    Total records: 97
+    Charge / Discharge / Impedance: 40 / 40 / 17
+    Ambient temperatures (°C): [43]
+    Initial capacity (Ah): 1.66668
+    Final capacity (Ah): 1.6673
+    SOH final (%): 100.04
+    SOH decline (%): -0.04
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0032 ──
+    Total records: 97
+    Charge / Discharge / Impedance: 40 / 40 / 17
+    Ambient temperatures (°C): [43]
+    Initial capacity (Ah): 1.70486
+    Final capacity (Ah): 1.6358
+    SOH final (%): 95.95
+    SOH decline (%): 4.05
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0033 ──
+    Total records: 486
+    Charge / Discharge / Impedance: 197 / 197 / 92
+    Ambient temperatures (°C): [24]
+    Initial capacity (Ah): 0.06843
+    Final capacity (Ah): 1.31528
+    SOH final (%): 1922.2
+    SOH decline (%): -1822.2
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0034 ──
+    Total records: 486
+    Charge / Discharge / Impedance: 197 / 197 / 92
+    Ambient temperatures (°C): [24]
+    Initial capacity (Ah): 0.74593
+    Final capacity (Ah): 1.28026
+    SOH final (%): 171.63
+    SOH decline (%): -71.63
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0036 ──
+    Total records: 486
+    Charge / Discharge / Impedance: 197 / 197 / 92
+    Ambient temperatures (°C): [24]
+    Initial capacity (Ah): 1.00198
+    Final capacity (Ah): 1.55911
+    SOH final (%): 155.6
+    SOH decline (%): -55.6
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0038 ──
+    Total records: 122
+    Charge / Discharge / Impedance: 47 / 47 / 28
+    Ambient temperatures (°C): [24, 44]
+    Initial capacity (Ah): 0.89806
+    Final capacity (Ah): 1.53015
+    SOH final (%): 170.38
+    SOH decline (%): -70.38
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0039 ──
+    Total records: 122
+    Charge / Discharge / Impedance: 47 / 47 / 28
+    Ambient temperatures (°C): [24, 44]
+    Initial capacity (Ah): 0.11904
+    Final capacity (Ah): 1.31534
+    SOH final (%): 1104.97
+    SOH decline (%): -1004.97
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0040 ──
+    Total records: 122
+    Charge / Discharge / Impedance: 47 / 47 / 28
+    Ambient temperatures (°C): [24, 44]
+    Initial capacity (Ah): 0.67346
+    Final capacity (Ah): 0.55699
+    SOH final (%): 82.71
+    SOH decline (%): 17.29
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0041 ──
+    Total records: 163
+    Charge / Discharge / Impedance: 67 / 67 / 29
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 0.05562
+    Final capacity (Ah): 0.83649
+    SOH final (%): 1503.94
+    SOH decline (%): -1403.94
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0042 ──
+    Total records: 275
+    Charge / Discharge / Impedance: 113 / 112 / 50
+    Ambient temperatures (°C): [4, 22, 24]
+    Initial capacity (Ah): 1.72871
+    Final capacity (Ah): 1.33747
+    SOH final (%): 77.37
+    SOH decline (%): 22.63
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0043 ──
+    Total records: 275
+    Charge / Discharge / Impedance: 113 / 112 / 50
+    Ambient temperatures (°C): [4, 22, 24]
+    Initial capacity (Ah): 1.71378
+    Final capacity (Ah): 1.27678
+    SOH final (%): 74.5
+    SOH decline (%): 25.5
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0044 ──
+    Total records: 275
+    Charge / Discharge / Impedance: 113 / 112 / 50
+    Ambient temperatures (°C): [4, 22, 24]
+    Initial capacity (Ah): 1.68653
+    Final capacity (Ah): 1.24863
+    SOH final (%): 74.04
+    SOH decline (%): 25.96
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0045 ──
+    Total records: 184
+    Charge / Discharge / Impedance: 72 / 72 / 40
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 1.08198
+    Final capacity (Ah): 0.60695
+    SOH final (%): 56.1
+    SOH decline (%): 43.9
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0046 ──
+    Total records: 184
+    Charge / Discharge / Impedance: 72 / 72 / 40
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 1.72824
+    Final capacity (Ah): 1.1538
+    SOH final (%): 66.76
+    SOH decline (%): 33.24
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0047 ──
+    Total records: 184
+    Charge / Discharge / Impedance: 72 / 72 / 40
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 1.6743
+    Final capacity (Ah): 1.15671
+    SOH final (%): 69.09
+    SOH decline (%): 30.91
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0048 ──
+    Total records: 184
+    Charge / Discharge / Impedance: 72 / 72 / 40
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 1.658
+    Final capacity (Ah): 1.22313
+    SOH final (%): 73.77
+    SOH decline (%): 26.23
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0049 ──
+    Total records: 62
+    Charge / Discharge / Impedance: 25 / 25 / 12
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 0.85837
+    Final capacity (Ah): 0.69139
+    SOH final (%): 80.55
+    SOH decline (%): 19.45
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0050 ──
+    Total records: 62
+    Charge / Discharge / Impedance: 25 / 25 / 12
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 0.86314
+    Final capacity (Ah): 0.27809
+    SOH final (%): 32.22
+    SOH decline (%): 67.78
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0051 ──
+    Total records: 62
+    Charge / Discharge / Impedance: 25 / 25 / 12
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 0.64347
+    Final capacity (Ah): 0.67785
+    SOH final (%): 105.34
+    SOH decline (%): -5.34
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0052 ──
+    Total records: 62
+    Charge / Discharge / Impedance: 25 / 25 / 12
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 0.86066
+    Final capacity (Ah): 1.35156
+    SOH final (%): 157.04
+    SOH decline (%): -57.04
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0053 ──
+    Total records: 137
+    Charge / Discharge / Impedance: 55 / 56 / 26
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 1.06914
+    Final capacity (Ah): 0.0
+    SOH final (%): 0.0
+    SOH decline (%): 100.0
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0054 ──
+    Total records: 253
+    Charge / Discharge / Impedance: 102 / 103 / 48
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 0.73994
+    Final capacity (Ah): 0.0
+    SOH final (%): 0.0
+    SOH decline (%): 100.0
+    Reached EOL (SOH ≤ 70%): True
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0055 ──
+    Total records: 252
+    Charge / Discharge / Impedance: 102 / 102 / 48
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 0.799
+    Final capacity (Ah): 0.99076
+    SOH final (%): 124.0
+    SOH decline (%): -24.0
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+  ── Battery B0056 ──
+    Total records: 252
+    Charge / Discharge / Impedance: 102 / 102 / 48
+    Ambient temperatures (°C): [4, 24]
+    Initial capacity (Ah): 0.78528
+    Final capacity (Ah): 1.12906
+    SOH final (%): 143.78
+    SOH decline (%): -43.78
+    Reached EOL (SOH ≤ 70%): False
+    Has Re (electrolyte resistance): True
+    Has Rct (charge transfer resist.): True
+
+----------------------------------------------------------------
+  UNIT 1 FEATURE AVAILABILITY
+----------------------------------------------------------------
+
+  Concept                                Available?   Unit 1 Topic
+  ------------------------------------------------------------------------
+  Mean / Variance / Std Dev              YES          Mean, Variance
+  Probability Density (KDE)              YES          Probability Density
+  Quantiles / IQR                        YES          Quantiles
+  Expectation E[X]                       YES          Expectation
+  Covariance                             YES          Covariance
+  Continuous Random Variables            YES          Continuous Random Variables
+  Discrete Random Variables              YES          Discrete Random Variables
+  State of Health (SOH)                  YES          Supervised Learning, Bayesian target
+  Polynomial Curve Fitting               YES          Polynomial Curve Fitting
+  Bayes Rule / Bayesian Risk             YES          Bayes Rule
+  Conditional Independence               YES          Conditional Independence
+  Independence Testing                   YES          Independence
+  Supervised Learning                    YES          Supervised Learning
+  Unsupervised Learning                  YES          Unsupervised Learning
+  Internal Resistance                    YES          Bayesian evidence feature
+  Skewness / Kurtosis                    YES          Probability distributions
+
+----------------------------------------------------------------
+  EXTRACTABLE CYCLE-LEVEL FEATURES
+----------------------------------------------------------------
+  ✓ battery_id                          ← metadata.csv battery_id column
+  ✓ cycle_number                        ← Sequential index per battery (discharge cycles)
+  ✓ operation_type                      ← metadata.csv type column (charge/discharge/impedance)
+  ✓ ambient_temperature                 ← metadata.csv ambient_temperature (°C)
+  ✓ voltage_mean                        ← mean(Voltage_measured) from per-cycle CSV
+  ✓ voltage_std                         ← std(Voltage_measured) from per-cycle CSV
+  ✓ voltage_min                         ← min(Voltage_measured) from per-cycle CSV
+  ✓ voltage_max                         ← max(Voltage_measured) from per-cycle CSV
+  ✓ current_mean                        ← mean(Current_measured) from per-cycle CSV
+  ✓ current_std                         ← std(Current_measured) from per-cycle CSV
+  ✓ current_min                         ← min(Current_measured) from per-cycle CSV
+  ✓ current_max                         ← max(Current_measured) from per-cycle CSV
+  ✓ temperature_mean                    ← mean(Temperature_measured) from per-cycle CSV
+  ✓ temperature_std                     ← std(Temperature_measured) from per-cycle CSV
+  ✓ temperature_min                     ← min(Temperature_measured) from per-cycle CSV
+  ✓ temperature_max                     ← max(Temperature_measured) from per-cycle CSV
+  ✓ discharge_duration                  ← max(Time) for discharge cycles (seconds)
+  ✓ charge_duration                     ← max(Time) for charge cycles (seconds)
+  ✓ capacity                            ← metadata.csv Capacity column (Ah) — discharge cycles only
+  ✓ soh                                 ← capacity / initial_capacity × 100% (derived)
+  ✓ eol_flag                            ← 1 if SOH <= configurable threshold (default 70%)
+  ✓ internal_resistance_Re              ← metadata.csv Re column (Ohms) — impedance cycles
+  ✓ internal_resistance_Rct             ← metadata.csv Rct column (Ohms) — impedance cycles
+  ✓ degradation_label                   ← Derived: Healthy / Early Degradation / Degraded based on SOH
+
+----------------------------------------------------------------
+  FEATURES NOT AVAILABLE / DERIVABLE
+----------------------------------------------------------------
+  ⚠  energy (Wh): Not directly in CSVs; would require numerical integration ∫V·I dt — feasible but not pre-computed
+  ⚠  power (W): Not directly available; derivable as V×I per time-step
+  ⚠  charge_current_profile: Separate column 'Current_charge' exists in charge CSVs; available
+  ⚠  depth_of_discharge (DOD): Not directly available; derivable from capacity ratio
+  ⚠  cycle_efficiency: Not pre-computed; derivable from charge/discharge ratio
+  ⚠  state_of_charge (SOC): Not measured; requires integration or model
+  ⚠  battery_age_days: Timestamps available in start_time but require parsing
+
+----------------------------------------------------------------
+  DATA QUALITY ASSESSMENT
+----------------------------------------------------------------
+  • metadata.csv Capacity column: valid for discharge rows only; NaN for charge and impedance.
+  • metadata.csv Re and Rct: valid for impedance rows only; NaN for charge and discharge.
+  • Capacity stored as object dtype in metadata — requires float conversion.
+  • Some batteries (B0033, B0034, B0036, etc.) show capacity INCREASING initially — likely warming-up effect or formation cycles.
+  • Batteries B0025-B0032 show minimal degradation (< 10 cycles or short experiments).
+  • Batteries B0005, B0006, B0007, B0018 have the most complete long-term data (168+ discharge cycles each).
+  • start_time field contains array-like strings — requires parsing for date/time analysis.
+  • No missing values in per-cycle CSV files (discharge, charge, impedance data is complete).
+  • Total available discharge cycles for SOH analysis: 2794
+  • Internal resistance (Re, Rct) is available for ALL batteries via impedance cycles.
+
+----------------------------------------------------------------
+  LIMITATIONS AND CAVEATS
+----------------------------------------------------------------
+  ⚠  NASA laboratory data may not represent all real-world battery chemistries or operating conditions.
+  ⚠  EOL threshold (default 70% SOH) is a CONFIGURABLE RESEARCH PARAMETER — NOT a universal safety standard.
+  ⚠  Bayesian conditional-independence assumptions (Naive Bayes) simplify the true joint distribution.
+  ⚠  Polynomial extrapolation beyond observed cycle range is an ESTIMATE, not a guaranteed forecast.
+  ⚠  Risk probability scores are model outputs — not guaranteed failure probabilities.
+  ⚠  This project is for educational/research purposes ONLY — it is NOT a safety certification system.
+  ⚠  Some batteries (B0025-B0032) have few discharge cycles — insufficient for reliable polynomial fitting.
+  ⚠  Temperature operating conditions vary across battery groups (4°C, 24°C, 43°C) — this affects degradation rates.
+
+----------------------------------------------------------------
+  PHASE 2 PLAN: HOW RAW DATA BECOMES CYCLE-LEVEL DATASET
+----------------------------------------------------------------
+  → Load metadata.csv → index of all 7565 cycle records
+  → For each discharge record: load per-cycle CSV → compute voltage/current/temperature statistics
+  → Assign cycle_number per battery (sequential discharge index)
+  → Map impedance Re/Rct to nearest discharge cycle by test_id
+  → Compute SOH = capacity / initial_capacity × 100%
+  → Apply EOL flag: 1 if SOH ≤ 70% (configurable)
+  → Assign degradation label: Healthy (SOH > 85%) / Early Degradation (70–85%) / Degraded (< 70%)
+  → Build clean cycle-level DataFrame with all features
+  → Save to data/processed/cycle_data.csv
+
+================================================================
+  END OF REPORT
+================================================================

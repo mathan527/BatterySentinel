@@ -1,0 +1,1432 @@
+{
+  "generated_at": "2026-09-27T16:56:35.146454",
+  "data_directory": "C:\\Users\\Mathan\\OneDrive\\Desktop\\Machine learning unit 1\\BatterySentinel\\data\\raw\\cleaned_dataset",
+  "dataset_variant": "Cleaned CSV version (patrickfleith/nasa-battery-dataset on Kaggle)",
+  "filesystem": {
+    "n_data_csvs": 7565,
+    "n_readme_files": 0,
+    "metadata_rows": 7565,
+    "metadata_cols": [
+      "type",
+      "start_time",
+      "ambient_temperature",
+      "battery_id",
+      "test_id",
+      "uid",
+      "filename",
+      "Capacity",
+      "Re",
+      "Rct"
+    ]
+  },
+  "readme_contents": {
+    "README_05_06_07_18.txt": "Data Description:\nA set of four Li-ion batteries (# 5, 6, 7 and 18) were run through 3 different operational profiles (charge, discharge and impedance) at room temperature. Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. Discharge was carried out at a constant current (CC) level of 2A until the battery voltage fell to 2.7V, 2.5V, 2.2V and 2.5V for batteries 5 6 7 and 18 respectively. Impedance measurement was carried out through an electrochemical impedance spectroscopy (EIS) frequency sweep from 0.1Hz to 5kHz. Repeated charge and discharge cycles result in accelerated aging of the batteries while impedance measurements provide insight into the internal battery parameters that change as aging progresses. The experiments were stopped when the batteries reached end-of-life (EOL) criteria, which was a 30% fade in rated capacity (from 2Ahr to 1.4Ahr). This dataset can be used for the prediction of both remaining charge (for a given discharge cycle) and remaining useful life (RUL).\n\nFiles:\nB0005.mat\tData for Battery #5\nB0006.mat\tData for Battery #6\nB0007.mat\tData for Battery #7\nB0018.mat\tData for Battery #18\n\nData Structure:\ncycle:\ttop level structure array containing the charge, discharge and impedance operations\n\ttype: \toperation  type, can be charge, discharge or impedance\n\tambient_temperature:\tambient temperature (degree C)\n\ttime: \tthe date and time of the start of the cycle, in MATLAB  date vector format\n\tdata:\tdata structure containing the measurements\n\t   for charge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at charger (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at charger (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t   for discharge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at load (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at load (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t\tCapacity:\t\tBattery capacity (Ahr) for discharge till 2.7V \n\t   for impedance the fields are:\n\t\tSense_current:\t\tCurrent in sense branch (Amps)\n\t\tBattery_current:\tCurrent in battery branch (Amps)\n\t\tCurrent_ratio:\t\tRatio of the above currents \n\t\tBattery_impedance:\tBattery impedance (Ohms) computed from raw data\n\t\tRectified_impedance:\tCalibrated and smoothed battery impedance (Ohms) \n\t\tRe:\t\t\tEstimated electrolyte resistance (Ohms)\n\t\tRct:\t\t\tEstimated charge transfer resistance (Ohms)\n",
+    "README_25_26_27_28.txt": "Data Description:\nA set of four Li-ion batteries (# 25, 26, 27 and 28) were run through 3 different operational profiles (charge, discharge and impedance) at room temperature (24 deg C). Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. Discharge was carried out using a 0.05Hz square wave loading profile of 4A amplitude and 50% duty cycle until the battery voltage fell to 2.0V, 2.2V, 2.5V and 2.7V for batteries 25, 26, 27 and 28 respectively. Impedance measurement was carried out through an electrochemical impedance spectroscopy (EIS) frequency sweep from 0.1Hz to 5kHz. \n\nFiles:\nB0025.mat\tData for Battery #25\nB0026.mat\tData for Battery #26\nB0027.mat\tData for Battery #27\nB0028.mat\tData for Battery #28\n\nData Structure:\ncycle:\ttop level structure array containing the charge, discharge and impedance operations\n\ttype: \toperation  type, can be charge, discharge or impedance\n\tambient_temperature:\tambient temperature (degree C)\n\ttime: \tthe date and time of the start of the cycle, in MATLAB  date vector format\n\tdata:\tdata structure containing the measurements\n\t   for charge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at charger (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at charger (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t   for discharge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at load (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at load (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t\tCapacity:\t\tBattery capacity (Ahr) for discharge till 2.7V \n\t   for impedance the fields are:\n\t\tSense_current:\t\tCurrent in sense branch (Amps)\n\t\tBattery_current:\tCurrent in battery branch (Amps)\n\t\tCurrent_ratio:\t\tRatio of the above currents \n\t\tBattery_impedance:\tBattery impedance (Ohms) computed from raw data\n\t\tRectified_impedance:\tCalibrated and smoothed battery impedance (Ohms) \n\t\tRe:\t\t\tEstimated electrolyte resistance (Ohms)\n\t\tRct:\t\t\tEstimated charge transfer resistance (Ohms)\n",
+    "README_29_30_31_32.txt": "Data Description:\nA set of four Li-ion batteries (# 29, 30, 31 and 32) were run through 3 different operational profiles (charge, discharge and impedance) at elevated ambient temperature (43 deg C). Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. Discharge was carried out at 4A until the battery voltage fell to 2.0V, 2.2V, 2.5V and 2.7V for batteries 29, 30, 31 and 32 respectively. Impedance measurement was carried out through an electrochemical impedance spectroscopy (EIS) frequency sweep from 0.1Hz to 5kHz. \n\nFiles:\nB0029.mat\tData for Battery #29\nB0030.mat\tData for Battery #30\nB0031.mat\tData for Battery #31\nB0032.mat\tData for Battery #32\n\nData Structure:\ncycle:\ttop level structure array containing the charge, discharge and impedance operations\n\ttype: \toperation  type, can be charge, discharge or impedance\n\tambient_temperature:\tambient temperature (degree C)\n\ttime: \tthe date and time of the start of the cycle, in MATLAB  date vector format\n\tdata:\tdata structure containing the measurements\n\t   for charge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at charger (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at charger (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t   for discharge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at load (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at load (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t\tCapacity:\t\tBattery capacity (Ahr) for discharge till 2.7V \n\t   for impedance the fields are:\n\t\tSense_current:\t\tCurrent in sense branch (Amps)\n\t\tBattery_current:\tCurrent in battery branch (Amps)\n\t\tCurrent_ratio:\t\tRatio of the above currents \n\t\tBattery_impedance:\tBattery impedance (Ohms) computed from raw data\n\t\tRectified_impedance:\tCalibrated and smoothed battery impedance (Ohms) \n\t\tRe:\t\t\tEstimated electrolyte resistance (Ohms)\n\t\tRct:\t\t\tEstimated charge transfer resistance (Ohms)\n",
+    "README_33_34_36.txt": "Data Description:\nA set of three Li-ion batteries (# 33, 34 and 36) were run through 3 different operational profiles (charge, discharge and impedance) at room temperature (24 deg C). Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. Discharge was carried out at 4A until the battery voltage fell to 2.0V and 2.2V for batteries 33 and 34 respectively. For battery 36 discharge was done at 2A until voltage fell to 2.7V. Impedance measurement was carried out through an electrochemical impedance spectroscopy (EIS) frequency sweep from 0.1Hz to 5kHz. The experiments were carried out until the capacity had reduced to 1.6Ahr (20% fade).\n\nFiles:\nB0033.mat\tData for Battery #33\nB0034.mat\tData for Battery #34\nB0036.mat\tData for Battery #36\n\nData Structure:\ncycle:\ttop level structure array containing the charge, discharge and impedance operations\n\ttype: \toperation  type, can be charge, discharge or impedance\n\tambient_temperature:\tambient temperature (degree C)\n\ttime: \tthe date and time of the start of the cycle, in MATLAB  date vector format\n\tdata:\tdata structure containing the measurements\n\t   for charge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at charger (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at charger (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t   for discharge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at load (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at load (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t\tCapacity:\t\tBattery capacity (Ahr) for discharge till 2.7V \n\t   for impedance the fields are:\n\t\tSense_current:\t\tCurrent in sense branch (Amps)\n\t\tBattery_current:\tCurrent in battery branch (Amps)\n\t\tCurrent_ratio:\t\tRatio of the above currents \n\t\tBattery_impedance:\tBattery impedance (Ohms) computed from raw data\n\t\tRectified_impedance:\tCalibrated and smoothed battery impedance (Ohms) \n\t\tRe:\t\t\tEstimated electrolyte resistance (Ohms)\n\t\tRct:\t\t\tEstimated charge transfer resistance (Ohms)\n",
+    "README_38_39_40.txt": "Data Description:\nA set of three Li-ion batteries (# 38, 39 and 40) were run through 3 different operational profiles (charge, discharge and impedance) at multiple ambient temperatures (24 & 44 deg C). Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. Multiple load current levels (1, 2, and 4 A) were used and the discharge runs were stopped at 2.2V, 2.5V and 2.7V for batteries 38, 39 and 40 respectively. Impedance measurement was carried out through an electrochemical impedance spectroscopy (EIS) frequency sweep from 0.1Hz to 5kHz. The experiments were carried out until the capacity had reduced to 1.6Ahr (20% fade). \n\nFiles:\nB0038.mat\tData for Battery #38\nB0039.mat\tData for Battery #39\nB0040.mat\tData for Battery #40\n\nData Structure:\ncycle:\ttop level structure array containing the charge, discharge and impedance operations\n\ttype: \toperation  type, can be charge, discharge or impedance\n\tambient_temperature:\tambient temperature (degree C)\n\ttime: \tthe date and time of the start of the cycle, in MATLAB  date vector format\n\tdata:\tdata structure containing the measurements\n\t   for charge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at charger (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at charger (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t   for discharge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at load (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at load (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t\tCapacity:\t\tBattery capacity (Ahr) for discharge till 2.7V \n\t   for impedance the fields are:\n\t\tSense_current:\t\tCurrent in sense branch (Amps)\n\t\tBattery_current:\tCurrent in battery branch (Amps)\n\t\tCurrent_ratio:\t\tRatio of the above currents \n\t\tBattery_impedance:\tBattery impedance (Ohms) computed from raw data\n\t\tRectified_impedance:\tCalibrated and smoothed battery impedance (Ohms) \n\t\tRe:\t\t\tEstimated electrolyte resistance (Ohms)\n\t\tRct:\t\t\tEstimated charge transfer resistance (Ohms)\n",
+    "README_41_42_43_44.txt": "Data Description:\nA set of four Li-ion batteries (# 41 - 44) were run through 3 different operational profiles (charge, discharge and impedance) at an ambient temperature of 4 deg C. Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. Multiple fixed load current levels (4A and 1A) were used and the discharge runs were stopped at 2V, 2.2V, 2.5V and 2.7V for batteries 41, 42, 43 and 44 respectively. Impedance measurement was carried out through an electrochemical impedance spectroscopy (EIS) frequency sweep from 0.1Hz to 5kHz. The experiments were carried out until the capacity had reduced to 1.4Ahr (30% fade). Note that there are several discharge runs where the capacity was very low. Reasons for this have not been fully analyzed.\n\nFiles:\nB0041.mat\tData for Battery #41\nB0042.mat\tData for Battery #42\nB0043.mat\tData for Battery #43\nB0044.mat\tData for Battery #44\n\nData Structure:\ncycle:\ttop level structure array containing the charge, discharge and impedance operations\n\ttype: \toperation  type, can be charge, discharge or impedance\n\tambient_temperature:\tambient temperature (degree C)\n\ttime: \tthe date and time of the start of the cycle, in MATLAB  date vector format\n\tdata:\tdata structure containing the measurements\n\t   for charge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at charger (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at charger (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t   for discharge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at load (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at load (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t\tCapacity:\t\tBattery capacity (Ahr) for discharge till 2.7V \n\t   for impedance the fields are:\n\t\tSense_current:\t\tCurrent in sense branch (Amps)\n\t\tBattery_current:\tCurrent in battery branch (Amps)\n\t\tCurrent_ratio:\t\tRatio of the above currents \n\t\tBattery_impedance:\tBattery impedance (Ohms) computed from raw data\n\t\tRectified_impedance:\tCalibrated and smoothed battery impedance (Ohms) \n\t\tRe:\t\t\tEstimated electrolyte resistance (Ohms)\n\t\tRct:\t\t\tEstimated charge transfer resistance (Ohms)\n",
+    "README_45_46_47_48.txt": "Data Description:\nA set of four Li-ion batteries (# 45 - 48) were run through 3 different operational profiles (charge, discharge and impedance) at an ambient temperature of 4 deg C. Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. Fixed load current level of 1A was used and the discharge runs were stopped at 2V, 2.2V, 2.5V and 2.7V for batteries 45, 46, 47 and 48 respectively. Impedance measurement was carried out through an electrochemical impedance spectroscopy (EIS) frequency sweep from 0.1Hz to 5kHz. The experiments were carried out until the capacity had reduced to 1.4Ahr (30% fade). Note that there are several discharge runs where the capacity was very low. Reasons for this have not been fully analyzed.\n\nFiles:\nB0045.mat\tData for Battery #45\nB0046.mat\tData for Battery #46\nB0047.mat\tData for Battery #47\nB0048.mat\tData for Battery #48\n\nData Structure:\ncycle:\ttop level structure array containing the charge, discharge and impedance operations\n\ttype: \toperation  type, can be charge, discharge or impedance\n\tambient_temperature:\tambient temperature (degree C)\n\ttime: \tthe date and time of the start of the cycle, in MATLAB  date vector format\n\tdata:\tdata structure containing the measurements\n\t   for charge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at charger (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at charger (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t   for discharge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at load (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at load (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t\tCapacity:\t\tBattery capacity (Ahr) for discharge till 2.7V \n\t   for impedance the fields are:\n\t\tSense_current:\t\tCurrent in sense branch (Amps)\n\t\tBattery_current:\tCurrent in battery branch (Amps)\n\t\tCurrent_ratio:\t\tRatio of the above currents \n\t\tBattery_impedance:\tBattery impedance (Ohms) computed from raw data\n\t\tRectified_impedance:\tCalibrated and smoothed battery impedance (Ohms) \n\t\tRe:\t\t\tEstimated electrolyte resistance (Ohms)\n\t\tRct:\t\t\tEstimated charge transfer resistance (Ohms)\n",
+    "README_49_50_51_52.txt": "Data Description:\nA set of four Li-ion batteries (# 49 - 52) were run through 3 different operational profiles (charge, discharge and impedance) at an ambient temperature of 4 deg C. Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. Fixed load current level of 2A was used and the discharge runs were stopped at 2V, 2.2V, 2.5V and 2.7V for batteries 49, 50, 51 and 52 respectively. Impedance measurement was carried out through an electrochemical impedance spectroscopy (EIS) frequency sweep from 0.1Hz to 5kHz. The experiments were carried out until the experiment control software crashed.  Note that there are several discharge runs where the capacity as well as voltage levels were very low. Reasons for this have not been fully analyzed.\n\nFiles:\nB0049.mat\tData for Battery #49\nB0050.mat\tData for Battery #50\nB0051.mat\tData for Battery #51\nB0052.mat\tData for Battery #52\n\nData Structure:\ncycle:\ttop level structure array containing the charge, discharge and impedance operations\n\ttype: \toperation  type, can be charge, discharge or impedance\n\tambient_temperature:\tambient temperature (degree C)\n\ttime: \tthe date and time of the start of the cycle, in MATLAB  date vector format\n\tdata:\tdata structure containing the measurements\n\t   for charge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at charger (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at charger (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t   for discharge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at load (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at load (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t\tCapacity:\t\tBattery capacity (Ahr) for discharge till 2.7V \n\t   for impedance the fields are:\n\t\tSense_current:\t\tCurrent in sense branch (Amps)\n\t\tBattery_current:\tCurrent in battery branch (Amps)\n\t\tCurrent_ratio:\t\tRatio of the above currents \n\t\tBattery_impedance:\tBattery impedance (Ohms) computed from raw data\n\t\tRectified_impedance:\tCalibrated and smoothed battery impedance (Ohms) \n\t\tRe:\t\t\tEstimated electrolyte resistance (Ohms)\n\t\tRct:\t\t\tEstimated charge transfer resistance (Ohms)\n",
+    "README_53_54_55_56.txt": "Data Description:\nA set of four Li-ion batteries (# 53 - 56) were run through 3 different operational profiles (charge, discharge and impedance) at an ambient temperature of 4 deg C. Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. Fixed load current level of 2A was used and the discharge runs were stopped at 2V, 2.2V, 2.5V and 2.7V for batteries 53, 54, 55 and 56 respectively. Impedance measurement was carried out through an electrochemical impedance spectroscopy (EIS) frequency sweep from 0.1Hz to 5kHz. The experiments were carried out until the capacity had reduced to 1.4Ahr (30% fade). Note that there are several discharge runs where the capacity was very low. Reasons for this have not been fully analyzed.\n\nFiles:\nB0053.mat\tData for Battery #53\nB0054.mat\tData for Battery #54\nB0055.mat\tData for Battery #55\nB0056.mat\tData for Battery #56\n\nData Structure:\ncycle:\ttop level structure array containing the charge, discharge and impedance operations\n\ttype: \toperation  type, can be charge, discharge or impedance\n\tambient_temperature:\tambient temperature (degree C)\n\ttime: \tthe date and time of the start of the cycle, in MATLAB  date vector format\n\tdata:\tdata structure containing the measurements\n\t   for charge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at charger (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at charger (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t   for discharge the fields are:\n\t\tVoltage_measured: \tBattery terminal voltage (Volts)\n\t\tCurrent_measured:\tBattery output current (Amps)\n\t\tTemperature_measured: \tBattery temperature (degree C)\n\t\tCurrent_charge:\t\tCurrent measured at load (Amps)\n\t\tVoltage_charge:\t\tVoltage measured at load (Volts)\n\t\tTime:\t\t\tTime vector for the cycle (secs)\n\t\tCapacity:\t\tBattery capacity (Ahr) for discharge till 2.7V \n\t   for impedance the fields are:\n\t\tSense_current:\t\tCurrent in sense branch (Amps)\n\t\tBattery_current:\tCurrent in battery branch (Amps)\n\t\tCurrent_ratio:\t\tRatio of the above currents \n\t\tBattery_impedance:\tBattery impedance (Ohms) computed from raw data\n\t\tRectified_impedance:\tCalibrated and smoothed battery impedance (Ohms) \n\t\tRe:\t\t\tEstimated electrolyte resistance (Ohms)\n\t\tRct:\t\t\tEstimated charge transfer resistance (Ohms)\n"
+  },
+  "csv_structure": {
+    "discharge": {
+      "example_file": "00001.csv",
+      "columns": [
+        "Voltage_measured",
+        "Current_measured",
+        "Temperature_measured",
+        "Current_load",
+        "Voltage_load",
+        "Time"
+      ],
+      "dtypes": {
+        "Voltage_measured": "float64",
+        "Current_measured": "float64",
+        "Temperature_measured": "float64",
+        "Current_load": "float64",
+        "Voltage_load": "float64",
+        "Time": "float64"
+      },
+      "shape_example": [
+        490,
+        6
+      ],
+      "missing_values": {
+        "Voltage_measured": 0,
+        "Current_measured": 0,
+        "Temperature_measured": 0,
+        "Current_load": 0,
+        "Voltage_load": 0,
+        "Time": 0
+      },
+      "sample_stats": {
+        "Voltage_measured": {
+          "min": 2.470611866932728,
+          "max": 4.246764125510136,
+          "mean": 3.4752664759657903
+        },
+        "Current_measured": {
+          "min": -1.00110134824347,
+          "max": 0.000252388610586,
+          "mean": -0.9527668403077523
+        },
+        "Temperature_measured": {
+          "min": 5.0080842944609065,
+          "max": 12.376815880696888,
+          "mean": 8.272422519178683
+        },
+        "Current_load": {
+          "min": 0.0002,
+          "max": 1.0,
+          "mean": 0.9571534693877551
+        },
+        "Voltage_load": {
+          "min": 0.0,
+          "max": 4.262,
+          "mean": 2.817938775510204
+        },
+        "Time": {
+          "min": 0.0,
+          "max": 6436.141,
+          "mean": 3205.134140816326
+        }
+      }
+    },
+    "charge": {
+      "example_file": "00003.csv",
+      "columns": [
+        "Voltage_measured",
+        "Current_measured",
+        "Temperature_measured",
+        "Current_charge",
+        "Voltage_charge",
+        "Time"
+      ],
+      "dtypes": {
+        "Voltage_measured": "float64",
+        "Current_measured": "float64",
+        "Temperature_measured": "float64",
+        "Current_charge": "float64",
+        "Voltage_charge": "float64",
+        "Time": "float64"
+      },
+      "shape_example": [
+        1621,
+        6
+      ],
+      "missing_values": {
+        "Voltage_measured": 0,
+        "Current_measured": 0,
+        "Temperature_measured": 0,
+        "Current_charge": 0,
+        "Voltage_charge": 0,
+        "Time": 0
+      },
+      "sample_stats": {
+        "Voltage_measured": {
+          "min": 3.486189216310417,
+          "max": 4.214594585505835,
+          "mean": 4.193520837869666
+        },
+        "Current_measured": {
+          "min": 0.001416590948633,
+          "max": 1.4943144350434685,
+          "mean": 0.5207924895446029
+        },
+        "Temperature_measured": {
+          "min": 4.358202275987088,
+          "max": 8.793624097800858,
+          "mean": 6.279191330194547
+        },
+        "Current_charge": {
+          "min": -0.0006,
+          "max": 1.4995,
+          "mean": 0.523551388032079
+        },
+        "Voltage_charge": {
+          "min": 0.002,
+          "max": 5.011,
+          "mean": 4.508324491054903
+        },
+        "Time": {
+          "min": 0.0,
+          "max": 10803.313,
+          "mean": 5363.634544725478
+        }
+      }
+    },
+    "impedance": {
+      "example_file": "00002.csv",
+      "columns": [
+        "Sense_current",
+        "Battery_current",
+        "Current_ratio",
+        "Battery_impedance",
+        "Rectified_Impedance"
+      ],
+      "dtypes": {
+        "Sense_current": "object",
+        "Battery_current": "object",
+        "Current_ratio": "object",
+        "Battery_impedance": "object",
+        "Rectified_Impedance": "object"
+      },
+      "shape_example": [
+        48,
+        5
+      ],
+      "missing_values": {
+        "Sense_current": 0,
+        "Battery_current": 0,
+        "Current_ratio": 0,
+        "Battery_impedance": 0,
+        "Rectified_Impedance": 9
+      },
+      "sample_stats": {
+        "Sense_current": {
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "Battery_current": {
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "Current_ratio": {
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "Battery_impedance": {
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "Rectified_Impedance": {
+          "min": null,
+          "max": null,
+          "mean": null
+        }
+      }
+    }
+  },
+  "battery_summaries": [
+    {
+      "battery_id": "B0005",
+      "total_records": 616,
+      "n_charge": 170,
+      "n_discharge": 168,
+      "n_impedance": 278,
+      "ambient_temperatures_C": [
+        24
+      ],
+      "capacity_initial_Ah": 1.85649,
+      "capacity_final_Ah": 1.32508,
+      "capacity_min_Ah": 1.28745,
+      "capacity_max_Ah": 1.85649,
+      "n_discharge_cycles": 168,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.044669,
+      "rct_initial": 0.069456,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 71.38,
+      "soh_min_pct": 69.35,
+      "soh_max_pct": 100.0,
+      "soh_decline_pct": 28.62,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0006",
+      "total_records": 616,
+      "n_charge": 170,
+      "n_discharge": 168,
+      "n_impedance": 278,
+      "ambient_temperatures_C": [
+        24
+      ],
+      "capacity_initial_Ah": 2.03534,
+      "capacity_final_Ah": 1.18568,
+      "capacity_min_Ah": 1.15382,
+      "capacity_max_Ah": 2.03534,
+      "n_discharge_cycles": 168,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.061234,
+      "rct_initial": 0.078542,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 58.25,
+      "soh_min_pct": 56.69,
+      "soh_max_pct": 100.0,
+      "soh_decline_pct": 41.75,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0007",
+      "total_records": 616,
+      "n_charge": 170,
+      "n_discharge": 168,
+      "n_impedance": 278,
+      "ambient_temperatures_C": [
+        24
+      ],
+      "capacity_initial_Ah": 1.89105,
+      "capacity_final_Ah": 1.43246,
+      "capacity_min_Ah": 1.40046,
+      "capacity_max_Ah": 1.89105,
+      "n_discharge_cycles": 168,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.038168,
+      "rct_initial": 0.061581,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 75.75,
+      "soh_min_pct": 74.06,
+      "soh_max_pct": 100.0,
+      "soh_decline_pct": 24.25,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0018",
+      "total_records": 319,
+      "n_charge": 134,
+      "n_discharge": 132,
+      "n_impedance": 53,
+      "ambient_temperatures_C": [
+        24
+      ],
+      "capacity_initial_Ah": 1.855,
+      "capacity_final_Ah": 1.34105,
+      "capacity_min_Ah": 1.34105,
+      "capacity_max_Ah": 1.855,
+      "n_discharge_cycles": 132,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.065158,
+      "rct_initial": 0.095554,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 72.29,
+      "soh_min_pct": 72.29,
+      "soh_max_pct": 100.0,
+      "soh_decline_pct": 27.71,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0025",
+      "total_records": 80,
+      "n_charge": 31,
+      "n_discharge": 28,
+      "n_impedance": 21,
+      "ambient_temperatures_C": [
+        24
+      ],
+      "capacity_initial_Ah": 1.84701,
+      "capacity_final_Ah": 1.76779,
+      "capacity_min_Ah": 1.76779,
+      "capacity_max_Ah": 1.84898,
+      "n_discharge_cycles": 28,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.050642,
+      "rct_initial": 0.105922,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 95.71,
+      "soh_min_pct": 95.71,
+      "soh_max_pct": 100.11,
+      "soh_decline_pct": 4.29,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0026",
+      "total_records": 80,
+      "n_charge": 31,
+      "n_discharge": 28,
+      "n_impedance": 21,
+      "ambient_temperatures_C": [
+        24
+      ],
+      "capacity_initial_Ah": 1.81325,
+      "capacity_final_Ah": 1.76875,
+      "capacity_min_Ah": 1.38634,
+      "capacity_max_Ah": 1.81653,
+      "n_discharge_cycles": 28,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.092718,
+      "rct_initial": 0.137872,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 97.55,
+      "soh_min_pct": 76.46,
+      "soh_max_pct": 100.18,
+      "soh_decline_pct": 2.45,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0027",
+      "total_records": 80,
+      "n_charge": 31,
+      "n_discharge": 28,
+      "n_impedance": 21,
+      "ambient_temperatures_C": [
+        24
+      ],
+      "capacity_initial_Ah": 1.82331,
+      "capacity_final_Ah": 1.77009,
+      "capacity_min_Ah": 1.77009,
+      "capacity_max_Ah": 1.82331,
+      "n_discharge_cycles": 28,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.09084,
+      "rct_initial": 0.139167,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 97.08,
+      "soh_min_pct": 97.08,
+      "soh_max_pct": 100.0,
+      "soh_decline_pct": 2.92,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0028",
+      "total_records": 80,
+      "n_charge": 31,
+      "n_discharge": 28,
+      "n_impedance": 21,
+      "ambient_temperatures_C": [
+        24
+      ],
+      "capacity_initial_Ah": 1.80468,
+      "capacity_final_Ah": 1.71723,
+      "capacity_min_Ah": 1.71723,
+      "capacity_max_Ah": 1.80478,
+      "n_discharge_cycles": 28,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.081411,
+      "rct_initial": 0.134353,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 95.15,
+      "soh_min_pct": 95.15,
+      "soh_max_pct": 100.01,
+      "soh_decline_pct": 4.85,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0029",
+      "total_records": 97,
+      "n_charge": 40,
+      "n_discharge": 40,
+      "n_impedance": 17,
+      "ambient_temperatures_C": [
+        43
+      ],
+      "capacity_initial_Ah": 1.69751,
+      "capacity_final_Ah": 1.61208,
+      "capacity_min_Ah": 1.61208,
+      "capacity_max_Ah": 1.8447,
+      "n_discharge_cycles": 40,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.02834,
+      "rct_initial": 0.044702,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 94.97,
+      "soh_min_pct": 94.97,
+      "soh_max_pct": 108.67,
+      "soh_decline_pct": 5.03,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0030",
+      "total_records": 97,
+      "n_charge": 40,
+      "n_discharge": 40,
+      "n_impedance": 17,
+      "ambient_temperatures_C": [
+        43
+      ],
+      "capacity_initial_Ah": 1.65607,
+      "capacity_final_Ah": 1.56278,
+      "capacity_min_Ah": 1.56278,
+      "capacity_max_Ah": 1.78155,
+      "n_discharge_cycles": 40,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.063418,
+      "rct_initial": 0.077259,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 94.37,
+      "soh_min_pct": 94.37,
+      "soh_max_pct": 107.58,
+      "soh_decline_pct": 5.63,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0031",
+      "total_records": 97,
+      "n_charge": 40,
+      "n_discharge": 40,
+      "n_impedance": 17,
+      "ambient_temperatures_C": [
+        43
+      ],
+      "capacity_initial_Ah": 1.66668,
+      "capacity_final_Ah": 1.6673,
+      "capacity_min_Ah": 1.66668,
+      "capacity_max_Ah": 1.83286,
+      "n_discharge_cycles": 40,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.040125,
+      "rct_initial": 0.053763,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 100.04,
+      "soh_min_pct": 100.0,
+      "soh_max_pct": 109.97,
+      "soh_decline_pct": -0.04,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0032",
+      "total_records": 97,
+      "n_charge": 40,
+      "n_discharge": 40,
+      "n_impedance": 17,
+      "ambient_temperatures_C": [
+        43
+      ],
+      "capacity_initial_Ah": 1.70486,
+      "capacity_final_Ah": 1.6358,
+      "capacity_min_Ah": 1.6358,
+      "capacity_max_Ah": 1.89403,
+      "n_discharge_cycles": 40,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.070665,
+      "rct_initial": 0.07945,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 95.95,
+      "soh_min_pct": 95.95,
+      "soh_max_pct": 111.1,
+      "soh_decline_pct": 4.05,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0033",
+      "total_records": 486,
+      "n_charge": 197,
+      "n_discharge": 197,
+      "n_impedance": 92,
+      "ambient_temperatures_C": [
+        24
+      ],
+      "capacity_initial_Ah": 0.06843,
+      "capacity_final_Ah": 1.31528,
+      "capacity_min_Ah": 0.06843,
+      "capacity_max_Ah": 1.88514,
+      "n_discharge_cycles": 197,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.103694,
+      "rct_initial": 0.141873,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 1922.2,
+      "soh_min_pct": 100.0,
+      "soh_max_pct": 2755.02,
+      "soh_decline_pct": -1822.2,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0034",
+      "total_records": 486,
+      "n_charge": 197,
+      "n_discharge": 197,
+      "n_impedance": 92,
+      "ambient_temperatures_C": [
+        24
+      ],
+      "capacity_initial_Ah": 0.74593,
+      "capacity_final_Ah": 1.28026,
+      "capacity_min_Ah": 0.74593,
+      "capacity_max_Ah": 1.82031,
+      "n_discharge_cycles": 197,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.125574,
+      "rct_initial": 0.157806,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 171.63,
+      "soh_min_pct": 100.0,
+      "soh_max_pct": 244.03,
+      "soh_decline_pct": -71.63,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0036",
+      "total_records": 486,
+      "n_charge": 197,
+      "n_discharge": 197,
+      "n_impedance": 92,
+      "ambient_temperatures_C": [
+        24
+      ],
+      "capacity_initial_Ah": 1.00198,
+      "capacity_final_Ah": 1.55911,
+      "capacity_min_Ah": 1.00198,
+      "capacity_max_Ah": 2.44406,
+      "n_discharge_cycles": 197,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.105458,
+      "rct_initial": 0.148769,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 155.6,
+      "soh_min_pct": 100.0,
+      "soh_max_pct": 243.92,
+      "soh_decline_pct": -55.6,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0038",
+      "total_records": 122,
+      "n_charge": 47,
+      "n_discharge": 47,
+      "n_impedance": 28,
+      "ambient_temperatures_C": [
+        24,
+        44
+      ],
+      "capacity_initial_Ah": 0.89806,
+      "capacity_final_Ah": 1.53015,
+      "capacity_min_Ah": 0.89806,
+      "capacity_max_Ah": 1.78644,
+      "n_discharge_cycles": 47,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.107412,
+      "rct_initial": 0.194225,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 170.38,
+      "soh_min_pct": 100.0,
+      "soh_max_pct": 198.92,
+      "soh_decline_pct": -70.38,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0039",
+      "total_records": 122,
+      "n_charge": 47,
+      "n_discharge": 47,
+      "n_impedance": 28,
+      "ambient_temperatures_C": [
+        24,
+        44
+      ],
+      "capacity_initial_Ah": 0.11904,
+      "capacity_final_Ah": 1.31534,
+      "capacity_min_Ah": 0.11904,
+      "capacity_max_Ah": 1.77157,
+      "n_discharge_cycles": 47,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.104138,
+      "rct_initial": 0.126577,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 1104.97,
+      "soh_min_pct": 100.0,
+      "soh_max_pct": 1488.24,
+      "soh_decline_pct": -1004.97,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0040",
+      "total_records": 122,
+      "n_charge": 47,
+      "n_discharge": 47,
+      "n_impedance": 28,
+      "ambient_temperatures_C": [
+        24,
+        44
+      ],
+      "capacity_initial_Ah": 0.67346,
+      "capacity_final_Ah": 0.55699,
+      "capacity_min_Ah": 0.42581,
+      "capacity_max_Ah": 1.73413,
+      "n_discharge_cycles": 47,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.118795,
+      "rct_initial": 0.147572,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 82.71,
+      "soh_min_pct": 63.23,
+      "soh_max_pct": 257.49,
+      "soh_decline_pct": 17.29,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0041",
+      "total_records": 163,
+      "n_charge": 67,
+      "n_discharge": 67,
+      "n_impedance": 29,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 0.05562,
+      "capacity_final_Ah": 0.83649,
+      "capacity_min_Ah": 0.04409,
+      "capacity_max_Ah": 1.21565,
+      "n_discharge_cycles": 67,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.053543,
+      "rct_initial": 0.185902,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 1503.94,
+      "soh_min_pct": 79.27,
+      "soh_max_pct": 2185.62,
+      "soh_decline_pct": -1403.94,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0042",
+      "total_records": 275,
+      "n_charge": 113,
+      "n_discharge": 112,
+      "n_impedance": 50,
+      "ambient_temperatures_C": [
+        4,
+        22,
+        24
+      ],
+      "capacity_initial_Ah": 1.72871,
+      "capacity_final_Ah": 1.33747,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 1.73147,
+      "n_discharge_cycles": 112,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.075864,
+      "rct_initial": 0.128331,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 77.37,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 100.16,
+      "soh_decline_pct": 22.63,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0043",
+      "total_records": 275,
+      "n_charge": 113,
+      "n_discharge": 112,
+      "n_impedance": 50,
+      "ambient_temperatures_C": [
+        4,
+        22,
+        24
+      ],
+      "capacity_initial_Ah": 1.71378,
+      "capacity_final_Ah": 1.27678,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 1.71378,
+      "n_discharge_cycles": 112,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.069534,
+      "rct_initial": 0.112706,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 74.5,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 100.0,
+      "soh_decline_pct": 25.5,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0044",
+      "total_records": 275,
+      "n_charge": 113,
+      "n_discharge": 112,
+      "n_impedance": 50,
+      "ambient_temperatures_C": [
+        4,
+        22,
+        24
+      ],
+      "capacity_initial_Ah": 1.68653,
+      "capacity_final_Ah": 1.24863,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 1.68653,
+      "n_discharge_cycles": 112,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.080249,
+      "rct_initial": 0.144593,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 74.04,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 100.0,
+      "soh_decline_pct": 25.96,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0045",
+      "total_records": 184,
+      "n_charge": 72,
+      "n_discharge": 72,
+      "n_impedance": 40,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 1.08198,
+      "capacity_final_Ah": 0.60695,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 1.08198,
+      "n_discharge_cycles": 72,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.072628,
+      "rct_initial": 0.245653,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 56.1,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 100.0,
+      "soh_decline_pct": 43.9,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0046",
+      "total_records": 184,
+      "n_charge": 72,
+      "n_discharge": 72,
+      "n_impedance": 40,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 1.72824,
+      "capacity_final_Ah": 1.1538,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 1.72824,
+      "n_discharge_cycles": 72,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.091945,
+      "rct_initial": 0.187072,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 66.76,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 100.0,
+      "soh_decline_pct": 33.24,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0047",
+      "total_records": 184,
+      "n_charge": 72,
+      "n_discharge": 72,
+      "n_impedance": 40,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 1.6743,
+      "capacity_final_Ah": 1.15671,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 1.6743,
+      "n_discharge_cycles": 72,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.056058,
+      "rct_initial": 0.20097,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 69.09,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 100.0,
+      "soh_decline_pct": 30.91,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0048",
+      "total_records": 184,
+      "n_charge": 72,
+      "n_discharge": 72,
+      "n_impedance": 40,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 1.658,
+      "capacity_final_Ah": 1.22313,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 1.658,
+      "n_discharge_cycles": 72,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.077991,
+      "rct_initial": 0.239749,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 73.77,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 100.0,
+      "soh_decline_pct": 26.23,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0049",
+      "total_records": 62,
+      "n_charge": 25,
+      "n_discharge": 25,
+      "n_impedance": 12,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 0.85837,
+      "capacity_final_Ah": 0.69139,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 2.37864,
+      "n_discharge_cycles": 25,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.048745,
+      "rct_initial": 0.161764,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 80.55,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 277.11,
+      "soh_decline_pct": 19.45,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0050",
+      "total_records": 62,
+      "n_charge": 25,
+      "n_discharge": 25,
+      "n_impedance": 12,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 0.86314,
+      "capacity_final_Ah": 0.27809,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 2.64015,
+      "n_discharge_cycles": 21,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.08458,
+      "rct_initial": 0.212442,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 32.22,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 305.88,
+      "soh_decline_pct": 67.78,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0051",
+      "total_records": 62,
+      "n_charge": 25,
+      "n_discharge": 25,
+      "n_impedance": 12,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 0.64347,
+      "capacity_final_Ah": 0.67785,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 2.33087,
+      "n_discharge_cycles": 25,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.071369,
+      "rct_initial": 0.218351,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 105.34,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 362.23,
+      "soh_decline_pct": -5.34,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0052",
+      "total_records": 62,
+      "n_charge": 25,
+      "n_discharge": 25,
+      "n_impedance": 12,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 0.86066,
+      "capacity_final_Ah": 1.35156,
+      "capacity_min_Ah": 0.86066,
+      "capacity_max_Ah": 1.41831,
+      "n_discharge_cycles": 4,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.078448,
+      "rct_initial": 0.190476,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 157.04,
+      "soh_min_pct": 100.0,
+      "soh_max_pct": 164.79,
+      "soh_decline_pct": -57.04,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0053",
+      "total_records": 137,
+      "n_charge": 55,
+      "n_discharge": 56,
+      "n_impedance": 26,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 1.06914,
+      "capacity_final_Ah": 0.0,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 1.15407,
+      "n_discharge_cycles": 56,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.100902,
+      "rct_initial": 0.15478,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 0.0,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 107.94,
+      "soh_decline_pct": 100.0,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0054",
+      "total_records": 253,
+      "n_charge": 102,
+      "n_discharge": 103,
+      "n_impedance": 48,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 0.73994,
+      "capacity_final_Ah": 0.0,
+      "capacity_min_Ah": 0.0,
+      "capacity_max_Ah": 1.16654,
+      "n_discharge_cycles": 103,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.107292,
+      "rct_initial": 0.22187,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 0.0,
+      "soh_min_pct": 0.0,
+      "soh_max_pct": 157.65,
+      "soh_decline_pct": 100.0,
+      "reached_eol_70pct": true
+    },
+    {
+      "battery_id": "B0055",
+      "total_records": 252,
+      "n_charge": 102,
+      "n_discharge": 102,
+      "n_impedance": 48,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 0.799,
+      "capacity_final_Ah": 0.99076,
+      "capacity_min_Ah": 0.799,
+      "capacity_max_Ah": 1.31989,
+      "n_discharge_cycles": 102,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.101578,
+      "rct_initial": 0.234717,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 124.0,
+      "soh_min_pct": 100.0,
+      "soh_max_pct": 165.19,
+      "soh_decline_pct": -24.0,
+      "reached_eol_70pct": false
+    },
+    {
+      "battery_id": "B0056",
+      "total_records": 252,
+      "n_charge": 102,
+      "n_discharge": 102,
+      "n_impedance": 48,
+      "ambient_temperatures_C": [
+        4,
+        24
+      ],
+      "capacity_initial_Ah": 0.78528,
+      "capacity_final_Ah": 1.12906,
+      "capacity_min_Ah": 0.78528,
+      "capacity_max_Ah": 1.34436,
+      "n_discharge_cycles": 102,
+      "has_internal_resistance_Re": true,
+      "has_internal_resistance_Rct": true,
+      "re_initial": 0.10886,
+      "rct_initial": 0.242352,
+      "soh_initial_pct": 100.0,
+      "soh_final_pct": 143.78,
+      "soh_min_pct": 100.0,
+      "soh_max_pct": 171.19,
+      "soh_decline_pct": -43.78,
+      "reached_eol_70pct": false
+    }
+  ],
+  "fleet_summary": {
+    "n_batteries": 34,
+    "battery_ids": [
+      "B0005",
+      "B0006",
+      "B0007",
+      "B0018",
+      "B0025",
+      "B0026",
+      "B0027",
+      "B0028",
+      "B0029",
+      "B0030",
+      "B0031",
+      "B0032",
+      "B0033",
+      "B0034",
+      "B0036",
+      "B0038",
+      "B0039",
+      "B0040",
+      "B0041",
+      "B0042",
+      "B0043",
+      "B0044",
+      "B0045",
+      "B0046",
+      "B0047",
+      "B0048",
+      "B0049",
+      "B0050",
+      "B0051",
+      "B0052",
+      "B0053",
+      "B0054",
+      "B0055",
+      "B0056"
+    ],
+    "total_records": 7565,
+    "total_charge": 2815,
+    "total_discharge": 2794,
+    "total_impedance": 1956,
+    "batteries_with_impedance": [
+      "B0005",
+      "B0006",
+      "B0007",
+      "B0018",
+      "B0025",
+      "B0026",
+      "B0027",
+      "B0028",
+      "B0029",
+      "B0030",
+      "B0031",
+      "B0032",
+      "B0033",
+      "B0034",
+      "B0036",
+      "B0038",
+      "B0039",
+      "B0040",
+      "B0041",
+      "B0042",
+      "B0043",
+      "B0044",
+      "B0045",
+      "B0046",
+      "B0047",
+      "B0048",
+      "B0049",
+      "B0050",
+      "B0051",
+      "B0052",
+      "B0053",
+      "B0054",
+      "B0055",
+      "B0056"
+    ],
+    "batteries_at_eol": [
+      "B0005",
+      "B0006",
+      "B0040",
+      "B0042",
+      "B0043",
+      "B0044",
+      "B0045",
+      "B0046",
+      "B0047",
+      "B0048",
+      "B0049",
+      "B0050",
+      "B0051",
+      "B0053",
+      "B0054"
+    ]
+  },
+  "unit1_assessment": {
+    "Mean / Variance / Std Dev": {
+      "available": true,
+      "source": "Voltage_measured, Current_measured, Temperature_measured per cycle",
+      "unit1_concept": "Mean, Variance"
+    },
+    "Probability Density (KDE)": {
+      "available": true,
+      "source": "Voltage, Current, Capacity distributions across cycles",
+      "unit1_concept": "Probability Density"
+    },
+    "Quantiles / IQR": {
+      "available": true,
+      "source": "All continuous measurement channels",
+      "unit1_concept": "Quantiles"
+    },
+    "Expectation E[X]": {
+      "available": true,
+      "source": "E[Voltage], E[Capacity], E[SOH] etc.",
+      "unit1_concept": "Expectation"
+    },
+    "Covariance": {
+      "available": true,
+      "source": "Capacity \u2194 Temperature \u2194 Cycle \u2194 SOH \u2194 Re",
+      "unit1_concept": "Covariance"
+    },
+    "Continuous Random Variables": {
+      "available": true,
+      "source": "Voltage, Current, Temperature time-series per cycle",
+      "unit1_concept": "Continuous Random Variables"
+    },
+    "Discrete Random Variables": {
+      "available": true,
+      "source": "Operation type (charge/discharge/impedance), EOL flag",
+      "unit1_concept": "Discrete Random Variables"
+    },
+    "State of Health (SOH)": {
+      "available": true,
+      "source": "capacity / initial_capacity \u00d7 100%",
+      "unit1_concept": "Supervised Learning, Bayesian target"
+    },
+    "Polynomial Curve Fitting": {
+      "available": true,
+      "source": "SOH vs cycle number \u2014 fit degree 1,2,3 polynomials",
+      "unit1_concept": "Polynomial Curve Fitting"
+    },
+    "Bayes Rule / Bayesian Risk": {
+      "available": true,
+      "source": "P(Degradation|Capacity, Temp, Voltage, Re, Cycle)",
+      "unit1_concept": "Bayes Rule"
+    },
+    "Conditional Independence": {
+      "available": true,
+      "source": "Naive Bayes conditional independence assumption",
+      "unit1_concept": "Conditional Independence"
+    },
+    "Independence Testing": {
+      "available": true,
+      "source": "Correlation / chi-sq tests on features",
+      "unit1_concept": "Independence"
+    },
+    "Supervised Learning": {
+      "available": true,
+      "source": "Gaussian Naive Bayes: Healthy vs Degraded",
+      "unit1_concept": "Supervised Learning"
+    },
+    "Unsupervised Learning": {
+      "available": true,
+      "source": "K-Means clustering of cycle records",
+      "unit1_concept": "Unsupervised Learning"
+    },
+    "Internal Resistance": {
+      "available": true,
+      "source": "Re (electrolyte resistance) and Rct (charge transfer resistance) from impedance cycles",
+      "unit1_concept": "Bayesian evidence feature"
+    },
+    "Skewness / Kurtosis": {
+      "available": true,
+      "source": "Higher-order moments of measurement distributions",
+      "unit1_concept": "Probability distributions"
+    }
+  },
+  "extractable_features": [
+    {
+      "feature": "battery_id",
+      "source": "metadata.csv battery_id column",
+      "available": true
+    },
+    {
+      "feature": "cycle_number",
+      "source": "Sequential index per battery (discharge cycles)",
+      "available": true
+    },
+    {
+      "feature": "operation_type",
+      "source": "metadata.csv type column (charge/discharge/impedance)",
+      "available": true
+    },
+    {
+      "feature": "ambient_temperature",
+      "source": "metadata.csv ambient_temperature (\u00b0C)",
+      "available": true
+    },
+    {
+      "feature": "voltage_mean",
+      "source": "mean(Voltage_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "voltage_std",
+      "source": "std(Voltage_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "voltage_min",
+      "source": "min(Voltage_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "voltage_max",
+      "source": "max(Voltage_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "current_mean",
+      "source": "mean(Current_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "current_std",
+      "source": "std(Current_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "current_min",
+      "source": "min(Current_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "current_max",
+      "source": "max(Current_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "temperature_mean",
+      "source": "mean(Temperature_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "temperature_std",
+      "source": "std(Temperature_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "temperature_min",
+      "source": "min(Temperature_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "temperature_max",
+      "source": "max(Temperature_measured) from per-cycle CSV",
+      "available": true
+    },
+    {
+      "feature": "discharge_duration",
+      "source": "max(Time) for discharge cycles (seconds)",
+      "available": true
+    },
+    {
+      "feature": "charge_duration",
+      "source": "max(Time) for charge cycles (seconds)",
+      "available": true
+    },
+    {
+      "feature": "capacity",
+      "source": "metadata.csv Capacity column (Ah) \u2014 discharge cycles only",
+      "available": true
+    },
+    {
+      "feature": "soh",
+      "source": "capacity / initial_capacity \u00d7 100% (derived)",
+      "available": true
+    },
+    {
+      "feature": "eol_flag",
+      "source": "1 if SOH <= configurable threshold (default 70%)",
+      "available": true
+    },
+    {
+      "feature": "internal_resistance_Re",
+      "source": "metadata.csv Re column (Ohms) \u2014 impedance cycles",
+      "available": true
+    },
+    {
+      "feature": "internal_resistance_Rct",
+      "source": "metadata.csv Rct column (Ohms) \u2014 impedance cycles",
+      "available": true
+    },
+    {
+      "feature": "degradation_label",
+      "source": "Derived: Healthy / Early Degradation / Degraded based on SOH",
+      "available": true
+    }
+  ],
+  "unavailable_features": [
+    "energy (Wh): Not directly in CSVs; would require numerical integration \u222bV\u00b7I dt \u2014 feasible but not pre-computed",
+    "power (W): Not directly available; derivable as V\u00d7I per time-step",
+    "charge_current_profile: Separate column 'Current_charge' exists in charge CSVs; available",
+    "depth_of_discharge (DOD): Not directly available; derivable from capacity ratio",
+    "cycle_efficiency: Not pre-computed; derivable from charge/discharge ratio",
+    "state_of_charge (SOC): Not measured; requires integration or model",
+    "battery_age_days: Timestamps available in start_time but require parsing"
+  ],
+  "data_quality_notes": [
+    "metadata.csv Capacity column: valid for discharge rows only; NaN for charge and impedance.",
+    "metadata.csv Re and Rct: valid for impedance rows only; NaN for charge and discharge.",
+    "Capacity stored as object dtype in metadata \u2014 requires float conversion.",
+    "Some batteries (B0033, B0034, B0036, etc.) show capacity INCREASING initially \u2014 likely warming-up effect or formation cycles.",
+    "Batteries B0025-B0032 show minimal degradation (< 10 cycles or short experiments).",
+    "Batteries B0005, B0006, B0007, B0018 have the most complete long-term data (168+ discharge cycles each).",
+    "start_time field contains array-like strings \u2014 requires parsing for date/time analysis.",
+    "No missing values in per-cycle CSV files (discharge, charge, impedance data is complete).",
+    "Total available discharge cycles for SOH analysis: 2794",
+    "Internal resistance (Re, Rct) is available for ALL batteries via impedance cycles."
+  ],
+  "phase2_plan": [
+    "Load metadata.csv \u2192 index of all 7565 cycle records",
+    "For each discharge record: load per-cycle CSV \u2192 compute voltage/current/temperature statistics",
+    "Assign cycle_number per battery (sequential discharge index)",
+    "Map impedance Re/Rct to nearest discharge cycle by test_id",
+    "Compute SOH = capacity / initial_capacity \u00d7 100%",
+    "Apply EOL flag: 1 if SOH \u2264 70% (configurable)",
+    "Assign degradation label: Healthy (SOH > 85%) / Early Degradation (70\u201385%) / Degraded (< 70%)",
+    "Build clean cycle-level DataFrame with all features",
+    "Save to data/processed/cycle_data.csv"
+  ],
+  "limitations": [
+    "NASA laboratory data may not represent all real-world battery chemistries or operating conditions.",
+    "EOL threshold (default 70% SOH) is a CONFIGURABLE RESEARCH PARAMETER \u2014 NOT a universal safety standard.",
+    "Bayesian conditional-independence assumptions (Naive Bayes) simplify the true joint distribution.",
+    "Polynomial extrapolation beyond observed cycle range is an ESTIMATE, not a guaranteed forecast.",
+    "Risk probability scores are model outputs \u2014 not guaranteed failure probabilities.",
+    "This project is for educational/research purposes ONLY \u2014 it is NOT a safety certification system.",
+    "Some batteries (B0025-B0032) have few discharge cycles \u2014 insufficient for reliable polynomial fitting.",
+    "Temperature operating conditions vary across battery groups (4\u00b0C, 24\u00b0C, 43\u00b0C) \u2014 this affects degradation rates."
+  ]
+}

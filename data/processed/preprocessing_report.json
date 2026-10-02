@@ -1,0 +1,750 @@
+{
+  "generated_at": "2026-09-27T17:14:17.038899",
+  "n_batteries": 34,
+  "n_discharge_cycles": 2794,
+  "batteries": [
+    "B0005",
+    "B0006",
+    "B0007",
+    "B0018",
+    "B0025",
+    "B0026",
+    "B0027",
+    "B0028",
+    "B0029",
+    "B0030",
+    "B0031",
+    "B0032",
+    "B0033",
+    "B0034",
+    "B0036",
+    "B0038",
+    "B0039",
+    "B0040",
+    "B0041",
+    "B0042",
+    "B0043",
+    "B0044",
+    "B0045",
+    "B0046",
+    "B0047",
+    "B0048",
+    "B0049",
+    "B0050",
+    "B0051",
+    "B0052",
+    "B0053",
+    "B0054",
+    "B0055",
+    "B0056"
+  ],
+  "columns": [
+    "battery_id",
+    "cycle_number",
+    "uid",
+    "ambient_temperature",
+    "voltage_mean",
+    "voltage_std",
+    "voltage_min",
+    "voltage_max",
+    "current_mean",
+    "current_std",
+    "current_min",
+    "current_max",
+    "temperature_mean",
+    "temperature_std",
+    "temperature_min",
+    "temperature_max",
+    "discharge_duration",
+    "capacity",
+    "soh",
+    "Re_Ohm",
+    "Rct_Ohm",
+    "eol_flag",
+    "degradation_label",
+    "data_quality_flag",
+    "voltage_range",
+    "current_range",
+    "temperature_range",
+    "voltage_cv",
+    "current_cv",
+    "temperature_cv",
+    "capacity_fade",
+    "capacity_fade_rate",
+    "soh_change",
+    "log_Re",
+    "log_Rct",
+    "cycle_norm",
+    "degradation_bin",
+    "capacity_rolling_mean",
+    "capacity_rolling_std",
+    "soh_rolling_mean",
+    "soh_rolling_std"
+  ],
+  "feature_groups": {
+    "raw": [
+      "voltage_mean",
+      "voltage_std",
+      "voltage_min",
+      "voltage_max",
+      "current_mean",
+      "current_std",
+      "current_min",
+      "current_max",
+      "temperature_mean",
+      "temperature_std",
+      "temperature_min",
+      "temperature_max",
+      "discharge_duration",
+      "capacity",
+      "Re_Ohm",
+      "Rct_Ohm",
+      "ambient_temperature"
+    ],
+    "derived": [
+      "voltage_range",
+      "current_range",
+      "temperature_range",
+      "voltage_cv",
+      "current_cv",
+      "temperature_cv",
+      "capacity_fade",
+      "capacity_fade_rate",
+      "log_Re",
+      "log_Rct",
+      "cycle_norm"
+    ],
+    "statistical": [
+      "soh_change",
+      "capacity_rolling_mean",
+      "capacity_rolling_std",
+      "soh_rolling_mean",
+      "soh_rolling_std"
+    ],
+    "bayesian": [
+      "capacity",
+      "soh",
+      "voltage_mean",
+      "voltage_std",
+      "temperature_mean",
+      "temperature_std",
+      "Re_Ohm",
+      "Rct_Ohm",
+      "current_mean",
+      "current_std"
+    ],
+    "target": [
+      "soh",
+      "eol_flag",
+      "degradation_label",
+      "degradation_bin"
+    ]
+  },
+  "degradation_counts": {
+    "Early Degradation": 1096,
+    "Healthy": 1050,
+    "Degraded": 623,
+    "Unknown": 25
+  },
+  "eol_flag_count": 623,
+  "data_quality_flags": {
+    "": 2727,
+    "zero_capacity": 44,
+    "formation_cycle": 23
+  },
+  "soh_statistics": {
+    "count": 2769.0,
+    "mean": 74.969,
+    "std": 24.3767,
+    "min": 0.0,
+    "25%": 71.1215,
+    "50%": 79.4065,
+    "75%": 90.7353,
+    "max": 100.0
+  },
+  "missing_values": {
+    "Re_Ohm": {
+      "n_missing": 76,
+      "pct": 2.72
+    },
+    "Rct_Ohm": {
+      "n_missing": 76,
+      "pct": 2.72
+    },
+    "log_Rct": {
+      "n_missing": 76,
+      "pct": 2.72
+    },
+    "log_Re": {
+      "n_missing": 76,
+      "pct": 2.72
+    },
+    "soh_change": {
+      "n_missing": 59,
+      "pct": 2.11
+    },
+    "capacity_fade_rate": {
+      "n_missing": 59,
+      "pct": 2.11
+    },
+    "capacity_rolling_std": {
+      "n_missing": 53,
+      "pct": 1.9
+    },
+    "soh_rolling_std": {
+      "n_missing": 53,
+      "pct": 1.9
+    },
+    "capacity": {
+      "n_missing": 25,
+      "pct": 0.89
+    },
+    "capacity_fade": {
+      "n_missing": 25,
+      "pct": 0.89
+    },
+    "soh": {
+      "n_missing": 25,
+      "pct": 0.89
+    },
+    "capacity_rolling_mean": {
+      "n_missing": 17,
+      "pct": 0.61
+    },
+    "soh_rolling_mean": {
+      "n_missing": 17,
+      "pct": 0.61
+    }
+  },
+  "per_battery_summary": [
+    {
+      "battery_id": "B0005",
+      "n_cycles": 168,
+      "soh_initial": 100.0,
+      "soh_final": 71.37561578838874,
+      "soh_min": 69.34884167276276,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        24
+      ],
+      "degradation_labels": {
+        "Early Degradation": 84,
+        "Healthy": 79,
+        "Degraded": 5
+      }
+    },
+    {
+      "battery_id": "B0006",
+      "n_cycles": 168,
+      "soh_initial": 100.0,
+      "soh_final": 58.254475229690506,
+      "soh_min": 56.689285192545555,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        24
+      ],
+      "degradation_labels": {
+        "Degraded": 65,
+        "Early Degradation": 54,
+        "Healthy": 49
+      }
+    },
+    {
+      "battery_id": "B0007",
+      "n_cycles": 168,
+      "soh_initial": 100.0,
+      "soh_final": 75.74910940083355,
+      "soh_min": 74.05692816217145,
+      "reached_eol": false,
+      "ambient_temperatures": [
+        24
+      ],
+      "degradation_labels": {
+        "Healthy": 87,
+        "Early Degradation": 81
+      }
+    },
+    {
+      "battery_id": "B0018",
+      "n_cycles": 132,
+      "soh_initial": 100.0,
+      "soh_final": 72.29370201580872,
+      "soh_min": 72.29370201580872,
+      "reached_eol": false,
+      "ambient_temperatures": [
+        24
+      ],
+      "degradation_labels": {
+        "Early Degradation": 71,
+        "Healthy": 61
+      }
+    },
+    {
+      "battery_id": "B0025",
+      "n_cycles": 28,
+      "soh_initial": 99.89331452015166,
+      "soh_final": 95.60868603224243,
+      "soh_min": 95.60868603224243,
+      "reached_eol": false,
+      "ambient_temperatures": [
+        24
+      ],
+      "degradation_labels": {
+        "Healthy": 28
+      }
+    },
+    {
+      "battery_id": "B0026",
+      "n_cycles": 28,
+      "soh_initial": 99.81958076820806,
+      "soh_final": 97.37005483874049,
+      "soh_min": 76.31798123794677,
+      "reached_eol": false,
+      "ambient_temperatures": [
+        24
+      ],
+      "degradation_labels": {
+        "Healthy": 27,
+        "Early Degradation": 1
+      }
+    },
+    {
+      "battery_id": "B0027",
+      "n_cycles": 28,
+      "soh_initial": 100.0,
+      "soh_final": 97.08139516350145,
+      "soh_min": 97.08139516350145,
+      "reached_eol": false,
+      "ambient_temperatures": [
+        24
+      ],
+      "degradation_labels": {
+        "Healthy": 28
+      }
+    },
+    {
+      "battery_id": "B0028",
+      "n_cycles": 28,
+      "soh_initial": 99.99453954159799,
+      "soh_final": 95.14901566396354,
+      "soh_min": 95.14901566396354,
+      "reached_eol": false,
+      "ambient_temperatures": [
+        24
+      ],
+      "degradation_labels": {
+        "Healthy": 28
+      }
+    },
+    {
+      "battery_id": "B0029",
+      "n_cycles": 40,
+      "soh_initial": 92.02071998435522,
+      "soh_final": 87.38975209798645,
+      "soh_min": 87.38975209798645,
+      "reached_eol": false,
+      "ambient_temperatures": [
+        43
+      ],
+      "degradation_labels": {
+        "Healthy": 40
+      }
+    },
+    {
+      "battery_id": "B0030",
+      "n_cycles": 40,
+      "soh_initial": 92.95647486935653,
+      "soh_final": 87.7200262760103,
+      "soh_min": 87.7200262760103,
+      "reached_eol": false,
+      "ambient_temperatures": [
+        43
+      ],
+      "degradation_labels": {
+        "Healthy": 40
+      }
+    },
+    {
+      "battery_id": "B0031",
+      "n_cycles": 40,
+      "soh_initial": 90.93311452425186,
+      "soh_final": 90.96713707856891,
+      "soh_min": 90.93311452425186,
+      "reached_eol": false,
+      "ambient_temperatures": [
+        43
+      ],
+      "degradation_labels": {
+        "Healthy": 40
+      }
+    },
+    {
+      "battery_id": "B0032",
+      "n_cycles": 40,
+      "soh_initial": 90.01242586881959,
+      "soh_final": 86.36602381635556,
+      "soh_min": 86.36602381635556,
+      "reached_eol": false,
+      "ambient_temperatures": [
+        43
+      ],
+      "degradation_labels": {
+        "Healthy": 40
+      }
+    },
+    {
+      "battery_id": "B0033",
+      "n_cycles": 197,
+      "soh_initial": 3.6297418884788826,
+      "soh_final": 69.77107439109554,
+      "soh_min": 3.6297418884788826,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        24
+      ],
+      "degradation_labels": {
+        "Early Degradation": 137,
+        "Healthy": 38,
+        "Degraded": 22
+      }
+    },
+    {
+      "battery_id": "B0034",
+      "n_cycles": 197,
+      "soh_initial": 40.978291197167174,
+      "soh_final": 70.33213956710925,
+      "soh_min": 40.978291197167174,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        24
+      ],
+      "degradation_labels": {
+        "Early Degradation": 178,
+        "Healthy": 11,
+        "Degraded": 8
+      }
+    },
+    {
+      "battery_id": "B0036",
+      "n_cycles": 197,
+      "soh_initial": 40.996603647442534,
+      "soh_final": 63.79186238004992,
+      "soh_min": 40.996603647442534,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        24
+      ],
+      "degradation_labels": {
+        "Degraded": 112,
+        "Early Degradation": 84,
+        "Healthy": 1
+      }
+    },
+    {
+      "battery_id": "B0038",
+      "n_cycles": 47,
+      "soh_initial": 50.27074994360511,
+      "soh_final": 85.65339756978885,
+      "soh_min": 50.27074994360511,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        24,
+        44
+      ],
+      "degradation_labels": {
+        "Healthy": 35,
+        "Degraded": 12
+      }
+    },
+    {
+      "battery_id": "B0039",
+      "n_cycles": 47,
+      "soh_initial": 6.719358804057557,
+      "soh_final": 74.24695052507317,
+      "soh_min": 6.719358804057557,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        24,
+        44
+      ],
+      "degradation_labels": {
+        "Healthy": 33,
+        "Degraded": 12,
+        "Early Degradation": 2
+      }
+    },
+    {
+      "battery_id": "B0040",
+      "n_cycles": 47,
+      "soh_initial": 38.83578242781517,
+      "soh_final": 32.11929787552492,
+      "soh_min": 24.554822289158366,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        24,
+        44
+      ],
+      "degradation_labels": {
+        "Healthy": 33,
+        "Degraded": 14
+      }
+    },
+    {
+      "battery_id": "B0041",
+      "n_cycles": 67,
+      "soh_initial": 4.575352348552342,
+      "soh_final": 68.81053348293472,
+      "soh_min": 3.6270565779546335,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Degraded": 45,
+        "Early Degradation": 17,
+        "Healthy": 5
+      }
+    },
+    {
+      "battery_id": "B0042",
+      "n_cycles": 112,
+      "soh_initial": 99.8407154724496,
+      "soh_final": 77.24469296139166,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4,
+        22
+      ],
+      "degradation_labels": {
+        "Healthy": 48,
+        "Degraded": 47,
+        "Early Degradation": 17
+      }
+    },
+    {
+      "battery_id": "B0043",
+      "n_cycles": 112,
+      "soh_initial": 100.0,
+      "soh_final": 74.50070497479263,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4,
+        22
+      ],
+      "degradation_labels": {
+        "Healthy": 49,
+        "Degraded": 47,
+        "Early Degradation": 16
+      }
+    },
+    {
+      "battery_id": "B0044",
+      "n_cycles": 112,
+      "soh_initial": 100.0,
+      "soh_final": 74.03537095051598,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4,
+        22
+      ],
+      "degradation_labels": {
+        "Degraded": 47,
+        "Healthy": 44,
+        "Early Degradation": 21
+      }
+    },
+    {
+      "battery_id": "B0045",
+      "n_cycles": 72,
+      "soh_initial": 100.0,
+      "soh_final": 56.09604245132347,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Degraded": 56,
+        "Early Degradation": 14,
+        "Healthy": 2
+      }
+    },
+    {
+      "battery_id": "B0046",
+      "n_cycles": 72,
+      "soh_initial": 100.0,
+      "soh_final": 66.76182876878015,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Early Degradation": 38,
+        "Degraded": 29,
+        "Healthy": 5
+      }
+    },
+    {
+      "battery_id": "B0047",
+      "n_cycles": 72,
+      "soh_initial": 100.0,
+      "soh_final": 69.08591493558421,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Early Degradation": 40,
+        "Degraded": 24,
+        "Healthy": 8
+      }
+    },
+    {
+      "battery_id": "B0048",
+      "n_cycles": 72,
+      "soh_initial": 100.0,
+      "soh_final": 73.77145103452632,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Early Degradation": 56,
+        "Healthy": 12,
+        "Degraded": 4
+      }
+    },
+    {
+      "battery_id": "B0049",
+      "n_cycles": 25,
+      "soh_initial": 36.08664511147571,
+      "soh_final": 29.06650181443299,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Degraded": 24,
+        "Healthy": 1
+      }
+    },
+    {
+      "battery_id": "B0050",
+      "n_cycles": 25,
+      "soh_initial": 32.69303417865207,
+      "soh_final": NaN,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Degraded": 20,
+        "Unknown": 4,
+        "Healthy": 1
+      }
+    },
+    {
+      "battery_id": "B0051",
+      "n_cycles": 25,
+      "soh_initial": 27.60654173953881,
+      "soh_final": 29.081325080098104,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Degraded": 24,
+        "Healthy": 1
+      }
+    },
+    {
+      "battery_id": "B0052",
+      "n_cycles": 25,
+      "soh_initial": 60.6820404075842,
+      "soh_final": NaN,
+      "soh_min": 60.6820404075842,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Unknown": 21,
+        "Healthy": 3,
+        "Degraded": 1
+      }
+    },
+    {
+      "battery_id": "B0053",
+      "n_cycles": 56,
+      "soh_initial": 92.64075842474394,
+      "soh_final": 0.0,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Healthy": 54,
+        "Early Degradation": 1,
+        "Degraded": 1
+      }
+    },
+    {
+      "battery_id": "B0054",
+      "n_cycles": 103,
+      "soh_initial": 63.429676795928515,
+      "soh_final": 0.0,
+      "soh_min": 0.0,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Early Degradation": 71,
+        "Healthy": 30,
+        "Degraded": 2
+      }
+    },
+    {
+      "battery_id": "B0055",
+      "n_cycles": 102,
+      "soh_initial": 60.535233033349186,
+      "soh_final": 75.0636452748086,
+      "soh_min": 60.535233033349186,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Early Degradation": 84,
+        "Healthy": 17,
+        "Degraded": 1
+      }
+    },
+    {
+      "battery_id": "B0056",
+      "n_cycles": 102,
+      "soh_initial": 58.41297845511308,
+      "soh_final": 83.98514881909617,
+      "soh_min": 58.41297845511308,
+      "reached_eol": true,
+      "ambient_temperatures": [
+        4
+      ],
+      "degradation_labels": {
+        "Healthy": 72,
+        "Early Degradation": 29,
+        "Degraded": 1
+      }
+    }
+  ]
+}

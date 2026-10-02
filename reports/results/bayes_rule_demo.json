@@ -1,0 +1,14 @@
+{
+  "evidence_description": "capacity < 1.0 Ah",
+  "prior_P_Degraded": 0.223,
+  "prior_P_Healthy": 0.777,
+  "likelihood_E_given_Degraded": 0.5538,
+  "likelihood_E_given_Healthy": 0.0076,
+  "joint_Degraded": 0.123479,
+  "joint_Healthy": 0.00592,
+  "P_Evidence": 0.129399,
+  "posterior_P_Degraded_given_E": 0.9542,
+  "posterior_P_Healthy_given_E": 0.0458,
+  "bayes_update_ratio": 4.2796,
+  "interpretation": "Observing 'capacity < 1.0 Ah' updates belief from P(Degraded)=22.30% to P(Degraded|E)=95.42%. Evidence multiplied prior by 4.28x."
+}
